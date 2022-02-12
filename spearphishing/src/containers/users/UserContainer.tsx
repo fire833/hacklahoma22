@@ -26,6 +26,7 @@ export function GetRandomUser(): User {
     }
 }
 
+// user interactions that can be searched by/used for reference.
 export enum UserOccupation {
     Unemployed,
     Retired,
