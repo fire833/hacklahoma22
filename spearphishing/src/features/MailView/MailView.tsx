@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { InboxEmailKind } from '../inbox/ActiveEmail';
 import { BossEmail } from '../InboxEmails/BossEmail/BossEmail';
+import { OutgoingDraftEmail } from '../InboxEmails/OutgoingDraftEmail/OutgoingDraftEmail';
 import "./MailView.css";
 
 export function MailView(){
@@ -10,10 +11,11 @@ export function MailView(){
         <div className='MailView'>
             <h1>Mail Pane</h1>
 
-            <BossEmail activeEmail={{
-                data: {msg: "Yo"},
-                type: InboxEmailKind.BossEmail
-            }}></BossEmail>
+            {/* <BossEmail> </BossEmail>
+
+            <OutgoingDraftEmail></OutgoingDraftEmail> */}
+
+            
         </div>
     )
 }

@@ -6,5 +6,6 @@ export type ActiveEmail =  {
 }
 
 export enum InboxEmailKind{
-    BossEmail
+    BossEmail,
+    OutgoingDraft
 }

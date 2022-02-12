@@ -1,6 +1,11 @@
+import { IncomingEmail } from '../inboxSlice'
 import './InboxEntry.css'
 
-export function InboxEntry() {
+type InboxEntryProps = {
+    email: IncomingEmail
+}
+
+export function InboxEntry(props: InboxEntryProps) {
     return (
         <div className="InboxEntry">
             <div className='iconWrapper'>
@@ -8,13 +13,13 @@ export function InboxEntry() {
             </div>
             <div className='summaryWrapper'>
                 <div className='senderRow summaryRow'>
-                    <p className='sender summaryText'>Sender Line</p>
+                    <p className='sender summaryText'>{props.email.senderName}</p>
                 </div>
                 <div className='subjectRow summaryRow'>
-                    <p className='subject summaryText'>Subject Line</p>
+                    <p className='subject summaryText'>{props.email.subject}</p>
                 </div>
                 <div className='blurbRow summaryRow'>
-                    <p className='blurb summaryText'>Blurb Line</p>
+                    <p className='blurb summaryText'> {props.email.blurb}</p>
                 </div>
             </div>
         </div>
