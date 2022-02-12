@@ -9,6 +9,12 @@ export const store = configureStore({
   },
 });
 
+
+store.subscribe( () => {
+  
+  localStorage.setItem("redux_root", JSON.stringify(store.getState()))
+})
+
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<

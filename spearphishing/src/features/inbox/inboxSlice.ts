@@ -19,11 +19,11 @@ export interface InboxState {
 const initialState: InboxState = {
     emails: [
         {
-            blurb: "An inbox email blurb",
-            kind: InboxEmailKind.BossEmail,
-            senderName: "Bossman",
-            subject: "Some subject line",
-            data: {a: 1}
+            blurb: "You're our lowest performer...",
+            kind: InboxEmailKind.IntroEmail,
+            senderName: "Boss",
+            subject: "Your last chance",
+            data: {}
         }
     ],
 

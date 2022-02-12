@@ -1,4 +1,5 @@
 export enum InboxEmailKind{
     BossEmail,
-    OutgoingDraft
+    OutgoingDraft,
+    IntroEmail
 }
