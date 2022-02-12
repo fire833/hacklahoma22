@@ -1,6 +1,6 @@
-import {User, UserOccupation} from './UserContainer'
+import {Target, UserOccupation} from './UserContainer'
 
-export const GlobalUsers: User[] = [{
+export const GlobalUsers: Target[] = [{
     Gender: "male",
     Picture: "", // TBD
     Age: 25,

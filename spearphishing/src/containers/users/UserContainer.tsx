@@ -4,7 +4,7 @@ import { GlobalUsers } from './users';
 export const PullUserFromInternet: boolean = false;
 
 // Specifies a user type that should be unmarshalled from a json object.
-export class User {
+export class Target {
     Name: string = "";
     Occupation: UserOccupation = UserOccupation.Unemployed;
     Age: number = 1;
@@ -14,7 +14,7 @@ export class User {
     Picture: string = "";
 }
 
-export function GetRandomUser(): User {
+export function GetRandomUser(): Target {
     let users = require('./users.json');
     let data = JSON.parse(users);
 
