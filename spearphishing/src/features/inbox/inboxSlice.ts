@@ -12,7 +12,8 @@ export type IncomingEmail = {
 
 
 export interface InboxState {
-    emails: IncomingEmail[]
+    emails: IncomingEmail[],
+    activeEmailIndex: number | null
 }
 
 const initialState: InboxState = {
@@ -24,7 +25,9 @@ const initialState: InboxState = {
             subject: "Some subject line",
             data: {a: 1}
         }
-    ]
+    ],
+
+    activeEmailIndex: null
 }
 
 export const inboxSlice = createSlice({
@@ -33,10 +36,12 @@ export const inboxSlice = createSlice({
     reducers: {
         pushEmail: (currState, action: PayloadAction<IncomingEmail>) => {
             currState.emails.push(action.payload);
+        },
+        selectEmail: (currState, action: PayloadAction<number>) => {
+            currState.activeEmailIndex = action.payload
         }
     }
 })
 
-
-export const {pushEmail} = inboxSlice.actions;
+export const { pushEmail, selectEmail } = inboxSlice.actions;
 export default inboxSlice.reducer;

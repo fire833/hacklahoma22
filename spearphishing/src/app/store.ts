@@ -5,7 +5,7 @@ import inboxReducer from '../features/inbox/inboxSlice';
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    inbox: inboxReducer
+    inbox: inboxReducer,
   },
 });
 

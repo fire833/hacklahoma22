@@ -1,6 +1,6 @@
-import { ActiveEmail } from "../inbox/ActiveEmail";
+import { IncomingEmail } from "../inbox/inboxSlice";
 
 export type InboxEmailProps = {
-    activeEmail: ActiveEmail,
+    activeEmail: IncomingEmail | null,
     children?: string
 }

@@ -3,7 +3,7 @@ import { InboxEmailProps } from "../InboxEmailProps"
 
 export function OutgoingDraftEmail(props: InboxEmailProps){
 
-    if(props.activeEmail.type !== InboxEmailKind.OutgoingDraft) return <></>
+    if(props.activeEmail === null || props.activeEmail.kind !== InboxEmailKind.OutgoingDraft) return <></>
 
     
     return <p>

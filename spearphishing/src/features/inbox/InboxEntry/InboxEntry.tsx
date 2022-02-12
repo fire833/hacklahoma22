@@ -1,13 +1,26 @@
-import { IncomingEmail } from '../inboxSlice'
+import { useAppDispatch } from '../../../app/hooks'
+import { IncomingEmail, selectEmail } from '../inboxSlice'
 import './InboxEntry.css'
 
-type InboxEntryProps = {
-    email: IncomingEmail
+interface InboxEntryProps {
+    email: IncomingEmail,
+    index: number
 }
 
 export function InboxEntry(props: InboxEntryProps) {
+
+    const dispatch = useAppDispatch();
+
+    function activateEmail(){
+        dispatch(
+            selectEmail(
+                props.index
+            )
+        )
+    }
+
     return (
-        <div className="InboxEntry">
+        <div className="InboxEntry" onClick={activateEmail}>
             <div className='iconWrapper'>
                 <div className='fakeIcon'></div>
             </div>

@@ -16,8 +16,8 @@ export function Inbox(){
     return(
         <div className='inbox'>
             {
-                inboxEmails.map(email => {
-                    return (<InboxEntry key={email.blurb} email={email}></InboxEntry>)
+                inboxEmails.map((email, index) => {
+                    return (<InboxEntry key={index} email={email} index={index}></InboxEntry>)
                 })
             }
         </div>
