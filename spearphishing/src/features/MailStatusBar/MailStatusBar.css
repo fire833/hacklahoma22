@@ -1,0 +1,8 @@
+
+
+.MailStatusBar {
+    grid-column: 1 / span 2;
+    background-color: #0078ED;
+    color: white;
+    padding-left: 2em;
+}
