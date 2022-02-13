@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { Target } from "../../../containers/targets/TargetContainer";
 import { GetRandomUser } from "../../../containers/targets/targets";
 import { InboxEmailKind } from "../../inbox/ActiveEmail";
-import { IncomingEmail, pushEmail } from "../../inbox/inboxSlice";
+import { IncomingEmail, pushEmail, removeActiveEmail } from "../../inbox/inboxSlice";
 import { InboxEmailProps } from "../InboxEmailProps";
 import { EmailSkeleton } from "../SharedComponents/EmailSkeleton";
 import { AttackTypes, Modifier, ModifierMap, ModifierMapKey } from "../../../containers/targets/AttackTypes";
@@ -72,7 +72,7 @@ export function DraftEmail(props: DraftEmailProps) {
 
     const ThisType: InboxEmailKind = InboxEmailKind.OutgoingDraft;
     let dispatch = useAppDispatch();
-    let [templateType, setTemplate] = useState("");
+    let [templateType, setTemplate] = useState(AttackTypes.BankResetPassword);
 
     let initialModsActive: string[] = [];
     let [modifierNamesActive, setModifiersActive] = useState(initialModsActive);
@@ -111,6 +111,10 @@ export function DraftEmail(props: DraftEmailProps) {
                 attackType: templateType as AttackTypes,
                 modifiersApplied: modifierNamesActive.map(e => ModifierMap[e as ModifierMapKey])
             }
+        );
+
+        dispatch(
+            removeActiveEmail()
         )
     }
 
@@ -127,10 +131,12 @@ export function DraftEmail(props: DraftEmailProps) {
                 <p className="draftConfigureHeader">Target Profile: </p>
                 <p>The target is a {target.Age} year old {target.Gender.toLowerCase()}. Occupation: {target.Occupation}</p>
             </div>
+            <hr></hr>
             <div className="draftConfigure">
                 <div className="attackTypeWrapper">
                     <h4 className="draftConfigureHeader">Choose your template:</h4>
-                    <select value={templateType} onChange={(evt: ChangeEvent<HTMLSelectElement>) => setTemplate(evt.target.value)}>
+                    <select value={templateType} onChange={(evt: ChangeEvent<HTMLSelectElement>) => setTemplate(evt.target.value as AttackTypes)}>
+                        <option selected disabled>-- Select Attack Type--</option>
                         <option value={AttackTypes.BankResetPassword}>{AttackTypes.BankResetPassword.toString()}</option>
                         <option value={AttackTypes.BossWantsFileCheck}>{AttackTypes.BossWantsFileCheck.toString()}</option>
                         <option value={AttackTypes.NigerianPrince}>{AttackTypes.NigerianPrince.toString()}</option>
@@ -139,6 +145,9 @@ export function DraftEmail(props: DraftEmailProps) {
                         <option value={AttackTypes.ThreatenPictureLeak}>{AttackTypes.ThreatenPictureLeak.toString()}</option>
                         <option value={AttackTypes.TikTokVerifyAddress}>{AttackTypes.TikTokVerifyAddress.toString()}</option>
                     </select>
+                    <p style={{color: 'rgba(0, 0, 0, 1)', fontWeight: '300'}}>Different kinds of people will be more or less susceptible to each type of attack. 
+                        Select the one that you think they would most likely fall for.
+                    </p>
                 </div>
                 <div className="modifierWrapper">
                     <h4 className="draftConfigureHeader">Add modifiers:</h4>

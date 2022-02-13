@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AttackTypes, Modifier, ModifierList, ModifierMap } from "../containers/targets/AttackTypes";
+import { AttackTypes, Modifier, ModifierList, ModifierMap, ModifierMapKey } from "../containers/targets/AttackTypes";
 
 interface PlayerState {
     // DomainCapabilities: DomainCapabilities;
@@ -33,7 +33,11 @@ interface PlayerState {
 
     data: number,
 
-    modifierNamesOwned: string[]
+    modifierNamesOwned: string[],
+
+    emails_sent_today: number,
+
+    hasWon: boolean
 }
 
 
@@ -51,8 +55,9 @@ let initialState: PlayerState = {
     data: 0,
     modifierNamesOwned: [
         ModifierList.BannerAd,
-        ModifierList.EmbedCryptoMiner
-    ]
+    ],
+    emails_sent_today: 0,
+    hasWon: false
 
 }
 
@@ -72,10 +77,29 @@ export const playerSlice = createSlice({
         },
         advanceDay: (currState) => {
             currState.day_num++;
+        },
+        clearDailyEmails: (currState) => {
+            currState.emails_sent_today = 0;
+        },
+        incrementDailyEmails: (currState) => {
+            currState.emails_sent_today++;
+        },
+        tryPurchaseModifierById: (currstate, action: PayloadAction<ModifierMapKey>) => {
+            let cost = ModifierMap[action.payload].cost;
+
+            if(currstate.money >= cost){
+                currstate.money -= cost;
+                currstate.modifierNamesOwned.push(action.payload);
+            }else{
+                alert("You don't have the funds!");
+            }
+        },
+        win: (currState) => {
+            currState.hasWon = true;
         }
         
     }
 })
 
-export const { acceptInitEmail, addMoney, addData, advanceDay } = playerSlice.actions;
+export const { acceptInitEmail, addMoney, addData, advanceDay, clearDailyEmails, incrementDailyEmails, tryPurchaseModifierById, win } = playerSlice.actions;
 export default playerSlice.reducer;

@@ -1,21 +1,7 @@
-
-
-// Enum for all available attack types.
-export enum AttackTypes {
-    NigerianPrince = "Nigerian Prince",
-    RelativeInPrison = "Relative in Prison",
-    BankResetPassword = "Bank Reset Password",
-    BossWantsFileCheck = "Boss Wants a File Check",
-    RequestChildSupportPregnancy = "Request Child Support (Pregnancy)",
-    ThreatenPictureLeak = "Threaten Picture Leak",
-    TikTokVerifyAddress = "TikTok Verify Address",
-}
-
 export type Modifier = {
     //k things that all modifiers should have
     name: string,
     description: string,
-    cost: number,
     modifyCredibility: (credibility: number) => number,
     modifyPayout: (moneyPaid: number, dataPaid: number) => {
         modifiedMoneyPaid: number,
@@ -65,8 +51,7 @@ export const ModifierMap: ModifierMapType = {
     "BannerAd": {
         name: "Banner Ad",
         description: "Your phishing attempt pays out more money, but is less credible",
-        cost: 500,
-        modifyCredibility: (credibility: number) =>{
+        modifyCredibility: (credibility: number) => {
             return Math.max(credibility - 5, 0) // cred - 5, but don't go negative,
         },
         modifyPayout: (moneyPaid: number, dataPaid: number) => {
@@ -79,7 +64,6 @@ export const ModifierMap: ModifierMapType = {
     "EmbedCryptoMiner": {
         name: "Embed Crypto Miner",
         description: "Greatly increases the monetary payout of an attempt, but greatly reduces credibility",
-        cost: 750,
         modifyCredibility: (credibility: number) => {
             return credibility /= 4;
         },

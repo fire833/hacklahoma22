@@ -3,4 +3,6 @@ export enum InboxEmailKind {
     OutgoingDraft = "Outgoing Draft",
     IntroEmail = "Intro Email",
     TargetBrief = "Target Brief",
+    Market = "Market",
+    ConclusionEmail = "ConclusionEmail"
 }
