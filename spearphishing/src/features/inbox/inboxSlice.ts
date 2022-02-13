@@ -24,6 +24,13 @@ const initialState: InboxState = {
             senderName: "The Bossman",
             subject: "Your last chance",
             data: {}
+        },
+        {
+            blurb: "Your daily target brief",
+            kind: InboxEmailKind.TargetBrief,
+            senderName: "The Bossman",
+            subject: "Target Brief",
+            data: {}
         }
     ],
 
@@ -35,7 +42,7 @@ export const inboxSlice = createSlice({
     initialState: initialState,
     reducers: {
         pushEmail: (currState, action: PayloadAction<IncomingEmail>) => {
-            currState.emails.push(action.payload);
+            currState.emails.unshift(action.payload);
         },
         selectEmail: (currState, action: PayloadAction<number>) => {
             currState.activeEmailIndex = action.payload
