@@ -37,11 +37,24 @@ export const inboxSlice = createSlice({
         pushEmail: (currState, action: PayloadAction<IncomingEmail>) => {
             currState.emails.push(action.payload);
         },
+        removeEmail: (currState, action: PayloadAction<number>) => { 
+            currState.emails.splice(action.payload, 1)
+            if(action.payload == currState.activeEmailIndex){
+                currState.activeEmailIndex = null;
+            }
+        },
+        removeActiveEmail: (currState => {
+            if(currState.activeEmailIndex != null){
+                currState.emails.splice(currState.activeEmailIndex, 1);
+                currState.activeEmailIndex = null;
+            }
+
+        }),
         selectEmail: (currState, action: PayloadAction<number>) => {
             currState.activeEmailIndex = action.payload
         }
     }
 })
 
-export const { pushEmail, selectEmail } = inboxSlice.actions;
+export const { pushEmail, selectEmail, removeActiveEmail, removeEmail } = inboxSlice.actions;
 export default inboxSlice.reducer;

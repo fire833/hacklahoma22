@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useAppSelector } from '../../app/hooks';
 import { InboxEmailKind } from '../inbox/ActiveEmail';
 import { BossStatusEmail } from '../InboxEmails/BossEmail/BossEmail';
+import { DraftEmail } from '../InboxEmails/DraftEmail/DraftEmail';
 import { IntroEmail } from '../InboxEmails/IntroEmail/IntroEmail';
-import { OutgoingDraftEmail } from '../InboxEmails/OutgoingDraftEmail/OutgoingDraftEmail';
+// import { OutgoingDraftEmail } from '../InboxEmails/OutgoingDraftEmail/OutgoingDraftEmail';
 import { TargetBriefEmail } from '../InboxEmails/TargetBriefEmail/TargetBriefEmail';
 import "./MailView.css";
 
@@ -19,7 +20,7 @@ export function MailView() {
         <div className='MailView'>
             <BossStatusEmail activeEmail={activeEmail}></BossStatusEmail>
 
-            <OutgoingDraftEmail activeEmail={activeIndex === null ? null : emails[activeIndex]}></OutgoingDraftEmail>
+            <DraftEmail activeEmail={activeEmail}></DraftEmail>
 
             <IntroEmail activeEmail={activeEmail}></IntroEmail>
 

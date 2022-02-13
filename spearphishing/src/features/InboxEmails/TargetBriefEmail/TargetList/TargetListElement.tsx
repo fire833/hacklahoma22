@@ -15,7 +15,7 @@ export function TargetListElement(props: TargetListProps) {
     return (
         <div className="targetListElement" onClick={props.onclick}>
             <div className="dataSegment">
-                <p>{props.target.Name}</p>
+                <p>{props.target.Name} | {props.target.Occupation} | {props.target.Gender} |  {props.target.Age} years old </p>
             </div>
             <div className="checkboxWrapper">
                 <input type={"checkbox"} className="checkbox" readOnly checked={props.checked}></input>
