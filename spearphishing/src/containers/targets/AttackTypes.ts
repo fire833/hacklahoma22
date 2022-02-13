@@ -58,13 +58,13 @@ export type Modifier = {
 */
 
 
-export type ModifierMapType = {[Property in keyof typeof ModifierList]: Modifier};
+export type ModifierMapType = { [Property in keyof typeof ModifierList]: Modifier };
 export type ModifierMapKey = keyof typeof ModifierList;
 export const ModifierMap: ModifierMapType = {
     "BannerAd": {
         name: "Banner Ad",
         description: "Your phishing attempt pays out more money, but is less credible",
-        modifyCredibility: (credibility: number) =>{
+        modifyCredibility: (credibility: number) => {
             return Math.max(credibility - 5, 0) // cred - 5, but don't go negative,
         },
         modifyPayout: (moneyPaid: number, dataPaid: number) => {
@@ -86,7 +86,7 @@ export const ModifierMap: ModifierMapType = {
                 modifiedDataPaid: dataPaid
             }
         }
-        
+
     }
 }
 

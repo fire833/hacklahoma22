@@ -3,7 +3,7 @@ import { AttackTypes, Modifier } from "../containers/targets/AttackTypes";
 import { Target } from "../containers/targets/TargetContainer";
 import { addData, addMoney } from "./playerSlice";
 
-import {store} from "../app/store"
+import { store } from "../app/store"
 
 export type PhishingEmail = {
     attackType: AttackTypes,
@@ -20,11 +20,11 @@ export function sendPhishingEmail(target: Target, phishingEmail: PhishingEmail) 
     // whether you add a flat value, or multiply by a number, who knows.
 
     if (target.VulnerableAttackTypes.includes(phishingEmail.attackType)) {
-        credibility *= 1.5
+        credibility *= 1.2
     };
 
     if (target.ResistantAttackTypes.includes(phishingEmail.attackType)) {
-        credibility /= 2;
+        credibility *= 0.5;
     }
 
     // now pass cred through all modifiers
@@ -35,7 +35,8 @@ export function sendPhishingEmail(target: Target, phishingEmail: PhishingEmail) 
 
     // now you have a freshly modified credibility, roll the die somehow
 
-    let phishSuccessful = true; // result of cred. roll
+    let phishSuccessful = Math.random() < (credibility / 100); // result of cred. roll
+    console.log(phishSuccessful)
 
     if (phishSuccessful) {
         // calculate earnings
