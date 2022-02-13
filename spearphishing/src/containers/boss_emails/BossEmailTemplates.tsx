@@ -1,10 +1,3 @@
-// import { Target } from "../targets/targets"
-
-// Specifies a boss email template.
-// export type BossEmail = {
-//     Targets?: Target[],
-    
-// }
 
 // returns a template on how the boss be feeling.
 export class BossEmailTemplate {
@@ -12,7 +5,6 @@ export class BossEmailTemplate {
     Status: BossEmailStatus;
 
     constructor() {
-       // this.Email = BossEmail;
         this.Status = BossEmailStatus.HappyWithWork;
     }
 }

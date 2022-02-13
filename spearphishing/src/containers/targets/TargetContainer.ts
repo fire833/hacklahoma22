@@ -21,10 +21,10 @@ export enum UserOccupation {
 
 // Specifies a user type that should be unmarshalled from a json object.
 export type Target = {
-    
+
     // Public elements
-    
-    Name: string, 
+
+    Name: string,
     Occupation: UserOccupation,
     Age: number,
     // Male or female
@@ -43,4 +43,9 @@ export type Target = {
     DataPayoutRange: number,
 
     ResistantAttackTypes: AttackTypes[],
+}
+
+
+export function GetRandomUser(): Target {
+    return GlobalUsers[Math.floor(Math.random() * GlobalUsers.length)];
 }
