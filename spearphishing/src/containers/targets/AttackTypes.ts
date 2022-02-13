@@ -186,7 +186,7 @@ export const ModifierMap: ModifierMapType = {
     "Ransomware": {
         name: "Ransomware",
         description: "Adds a flat $200 and to every successful hack by infecting your target with a ransomware virus.",
-        cost: 5000,
+        cost: 3000,
         modifyCredibility: (cred: number) => { return cred; },
         modifyPayout: (money: number, data: number) => {
             return {
