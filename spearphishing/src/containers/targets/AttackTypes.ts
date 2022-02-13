@@ -90,10 +90,25 @@ export const ModifierMap: ModifierMapType = {
             }
         }
 
+    },
+    "Keylogger": {
+        name: "Keylogger",
+        description: "Adds a flat 50mb of data to every successful hack",
+        cost: 500,
+        modifyCredibility: (cred: number) => {
+            return cred;
+        },
+        modifyPayout: (money: number, data: number) => {
+            return {
+                modifiedMoneyPaid: money,
+                modifiedDataPaid: data + 50
+            }
+        }
     }
 }
 
 export const ModifierList = {
     BannerAd: "BannerAd",
-    EmbedCryptoMiner: "EmbedCryptoMiner"
+    EmbedCryptoMiner: "EmbedCryptoMiner",
+    Keylogger: "Keylogger"
 }
