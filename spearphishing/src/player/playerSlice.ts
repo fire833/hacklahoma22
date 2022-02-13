@@ -26,6 +26,12 @@ interface PlayerState {
     UnlockedAttackVectors: AttackTypes[];
 
     hasAcceptedInitEmail: boolean
+
+    day_num: number,
+
+    money: number,
+
+    data: number
 }
 
 
@@ -37,7 +43,11 @@ let initialState: PlayerState = {
     ObfuscateViaAlternatePayload: false,
     UnlockedAttackVectors: [],
     AdvancedDeceptionTechniques: false,
-    hasAcceptedInitEmail: false
+    hasAcceptedInitEmail: false,
+    day_num: 0,
+    money: 0,
+    data: 0
+
 }
 
 

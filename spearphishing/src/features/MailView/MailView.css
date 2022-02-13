@@ -2,9 +2,10 @@
 
 
 .MailView {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     border-left: none;
     padding: 2em;
     padding-left: 3em;
     background-color: rgba(180, 180, 180, 0.7);
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
 }
