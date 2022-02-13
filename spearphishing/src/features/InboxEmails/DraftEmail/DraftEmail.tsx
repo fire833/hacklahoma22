@@ -38,23 +38,23 @@ function serveTemplate(attack: string) {
         case AttackTypes.NigerianPrince:
             return (
                 <NigerianPrinceEmail></NigerianPrinceEmail>
-                )
+            )
         case AttackTypes.RelativeInPrison:
             return (
                 <RelativeInPrisonEmail></RelativeInPrisonEmail>
-                )
+            )
         case AttackTypes.RequestChildSupportPregnancy:
             return (
                 <RequestChildSupportPregnancyEmail></RequestChildSupportPregnancyEmail>
-                )
+            )
         case AttackTypes.ThreatenPictureLeak:
             return (
                 <ThreatenPictureLeakEmail></ThreatenPictureLeakEmail>
-                )
+            )
         case AttackTypes.TikTokVerifyAddress:
             return (
                 <TikTokVerifyAddressEmail></TikTokVerifyAddressEmail>
-                )
+            )
         default:
             return (
                 <p></p>
@@ -71,7 +71,7 @@ export function DraftEmail(props: DraftEmailProps) {
     const [templateType, setTemplate] = useState("");
     if (props.activeEmail === null || props.activeEmail.kind !== ThisType) return <></>
 
-    
+
     let target = (props.activeEmail.data as DraftEmailData).target;
 
     return (
@@ -89,8 +89,6 @@ export function DraftEmail(props: DraftEmailProps) {
             </select>
 
             {serveTemplate(templateType)}
-
-            <p>Hello, i am ur br0ter</p>
         </EmailSkeleton >
     )
 }
