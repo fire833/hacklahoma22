@@ -32,7 +32,7 @@ export type Target = {
     Occupation: TargetOccupation,
     Age: number,
     // Male or female
-    Gender: "male" | "female",
+    Gender: "Male" | "Female",
     // Specify the URL to get the image for this person, need to decide how this will be implemented.
     Picture: string,
     // Specify the default baseline trust of the target.

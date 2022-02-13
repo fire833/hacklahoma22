@@ -2,7 +2,7 @@ import { AttackTypes } from './AttackTypes';
 import { Target, TargetOccupation } from './TargetContainer'
 
 export const GlobalTargets: Target[] = [{
-    Gender: "female",
+    Gender: "Female",
     Picture: "", // TBD
     Age: 25,
     Name: "Julia Childs",
@@ -16,7 +16,7 @@ export const GlobalTargets: Target[] = [{
     VulnerableAttackTypes: []
 },
 {
-    Gender: "male",
+    Gender: "Male",
     Picture: "", // TBD
     Age: 39,
     Name: "Dr. J",
@@ -30,7 +30,7 @@ export const GlobalTargets: Target[] = [{
     VulnerableAttackTypes: []
 },
 {
-    Gender: "female",
+    Gender: "Female",
     Picture: "", // TBD
     Age: 22,
     Name: "Zendaya",
@@ -44,7 +44,7 @@ export const GlobalTargets: Target[] = [{
     VulnerableAttackTypes: []
 },
 {
-    Gender: "female",
+    Gender: "Female",
     Picture: "", // TBD
     Age: 75,
     Name: "Grandma Byrd",
@@ -59,7 +59,7 @@ export const GlobalTargets: Target[] = [{
 
 },
 {
-    Gender: "male",
+    Gender: "Male",
     Picture: "", // TBD
     Age: 45,
     Name: "Linus Torvalds",
@@ -73,7 +73,7 @@ export const GlobalTargets: Target[] = [{
     VulnerableAttackTypes: []
 },
 {
-    Gender: "male",
+    Gender: "Male",
     Picture: "", // TBD
     Age: 67,
     Name: "Ken 'Mad Dog' Mattis",
@@ -88,7 +88,7 @@ export const GlobalTargets: Target[] = [{
 
 },
 {
-    Gender: "male",
+    Gender: "Male",
     Picture: "", // TBD
     Age: 38,
     Name: "Seth Vargo",
@@ -102,10 +102,10 @@ export const GlobalTargets: Target[] = [{
     VulnerableAttackTypes: []
 },
 {
-    Gender: "female",
-    Picture: "Maya Olson", // TBD
+    Gender: "Female",
+    Picture: "", // TBD
     Age: 22,
-    Name: "",
+    Name: "Maya Olson",
     Occupation: TargetOccupation.BankingPerson,
     DataPayoutMin: 15,
     DataPayoutRange: 15,
@@ -117,7 +117,7 @@ export const GlobalTargets: Target[] = [{
 
 },
 {
-    Gender: "female",
+    Gender: "Female",
     Picture: "", // TBD
     Age: 29,
     Name: "Scarlett Johansen",
@@ -132,23 +132,7 @@ export const GlobalTargets: Target[] = [{
 
 },
 {
-    Gender: "female",
-    Picture: "", // TBD
-    Age: 29,
-    Name: "",
-    Occupation: TargetOccupation.Actor,
-    DataPayoutMin: 5,
-    DataPayoutRange: 15,
-    Trust: 20,
-    MoneyPayoutMin: 500,
-    MoneyPayoutRange: 1500,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak],
-    VulnerableAttackTypes: []
-
-},
-
-{
-    Gender: "male",
+    Gender: "Male",
     Picture: "", // TBD
     Age: 29,
     Name: "Arman Dadgar",
@@ -162,7 +146,7 @@ export const GlobalTargets: Target[] = [{
     VulnerableAttackTypes: []
 },
 {
-    Gender: "female",
+    Gender: "Female",
     Picture: "", // TBD
     Age: 31,
     Name: "Kelley Teabo",
@@ -174,7 +158,7 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutRange: 500,
     ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
     VulnerableAttackTypes: []
- 
+
 },];
 
 
