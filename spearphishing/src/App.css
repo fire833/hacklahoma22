@@ -12,7 +12,7 @@
 .App {
   display: grid;
   grid-template-columns: 2fr 6fr;
-  grid-template-rows: 1fr 9fr;
+  grid-template-rows: 1fr 10fr;
   width: 100vw;
   height: 100vh;
 }
