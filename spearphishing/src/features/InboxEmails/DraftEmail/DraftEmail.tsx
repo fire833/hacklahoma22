@@ -60,7 +60,7 @@ function serveTemplate(attack: string) {
             )
         default:
             return (
-                <p></p>
+                <div />
             )
 
     }
@@ -143,7 +143,6 @@ export function DraftEmail(props: DraftEmailProps) {
                         })}
                     </div>
                 </div>
-
             </div>
 
             <hr />
