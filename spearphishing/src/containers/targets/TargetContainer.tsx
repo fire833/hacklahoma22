@@ -1,16 +1,16 @@
 import { AttackTypes } from './AttackTypes';
 import './targets'
-import { GlobalUsers } from './targets';
+import { GlobalTargets } from './targets';
 
-export const PullUserFromInternet: boolean = false;
+export const PullTargetFromInternet: boolean = false;
 
-// Specifies a user type that should be unmarshalled from a json object.
+// Specifies a target type that should be unmarshalled from a json object.
 export type Target = {
 
     // Public elements
 
     Name: string,
-    Occupation: UserOccupation,
+    Occupation: TargetOccupation,
     Age: number,
     // Male or female
     Gender: "male" | "female",
@@ -30,20 +30,20 @@ export type Target = {
     ResistantAttackTypes: AttackTypes[],
 }
 
-export function GetRandomUser(): Target {
-    let users = require('./users.json');
-    let data = JSON.parse(users);
+export function GetRandomTarget(): Target {
+    let targets = require('./targets.json');
+    let data = JSON.parse(targets);
 
-    if (PullUserFromInternet) {
+    if (PullTargetFromInternet) {
         // let fetch()
-        return GlobalUsers[0];
+        return GlobalTargets[0];
     } else {
-        return GlobalUsers[Math.floor(Math.random() * GlobalUsers.length)];
+        return GlobalTargets[Math.floor(Math.random() * GlobalTargets.length)];
     }
 }
 
-// user interactions that can be searched by/used for reference.
-export enum UserOccupation {
+// target interactions that can be searched by/used for reference.
+export enum TargetOccupation {
     Unemployed,
     Retired,
     BusinessPerson,

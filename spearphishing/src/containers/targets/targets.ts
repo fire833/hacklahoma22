@@ -1,12 +1,12 @@
 import { AttackTypes } from './AttackTypes';
-import { Target, UserOccupation } from './TargetContainer'
+import { Target, TargetOccupation } from './TargetContainer'
 
-export const GlobalUsers: Target[] = [{
+export const GlobalTargets: Target[] = [{
     Gender: "male",
     Picture: "", // TBD
     Age: 25,
     Name: "Kevin Wolfram",
-    Occupation: UserOccupation.Accountant,
+    Occupation: TargetOccupation.Accountant,
     DataPayoutMin: 1,
     DataPayoutRange: 1,
     Trust: 50,
@@ -19,7 +19,7 @@ export const GlobalUsers: Target[] = [{
     Picture: "", // TBD
     Age: 39,
     Name: "Dr. J",
-    Occupation: UserOccupation.Professor,
+    Occupation: TargetOccupation.Professor,
     DataPayoutMin: 4,
     DataPayoutRange: 4,
     Trust: 10,
@@ -32,7 +32,7 @@ export const GlobalUsers: Target[] = [{
     Picture: "", // TBD
     Age: 22,
     Name: "Zendaya",
-    Occupation: UserOccupation.Actor,
+    Occupation: TargetOccupation.Actor,
     DataPayoutMin: 2,
     DataPayoutRange: 2,
     Trust: 50,
@@ -45,7 +45,7 @@ export const GlobalUsers: Target[] = [{
     Picture: "", // TBD
     Age: 39,
     Name: "Grandma Byrd",
-    Occupation: UserOccupation.Retired,
+    Occupation: TargetOccupation.Retired,
     DataPayoutMin: 0,
     DataPayoutRange: 1,
     Trust: 70,
