@@ -50,7 +50,8 @@ let initialState: PlayerState = {
     money: 0,
     data: 0,
     modifierNamesOwned: [
-        ModifierList.BannerAd
+        ModifierList.BannerAd,
+        ModifierList.EmbedCryptoMiner
     ]
 
 }

@@ -73,9 +73,24 @@ export const ModifierMap: ModifierMapType = {
                 modifiedDataPaid: dataPaid,
             }
         }
+    },
+    "EmbedCryptoMiner": {
+        name: "Embed Crypto Miner",
+        description: "Greatly increases the monetary payout of an attempt, but greatly reduces credibility",
+        modifyCredibility: (credibility: number) => {
+            return credibility /= 4;
+        },
+        modifyPayout: (moneyPaid: number, dataPaid: number) => {
+            return {
+                modifiedMoneyPaid: moneyPaid * 4,
+                modifiedDataPaid: dataPaid
+            }
+        }
+        
     }
 }
 
 export const ModifierList = {
-    BannerAd: "BannerAd"
+    BannerAd: "BannerAd",
+    EmbedCryptoMiner: "EmbedCryptoMiner"
 }

@@ -130,11 +130,16 @@ export function DraftEmail(props: DraftEmailProps) {
                 </div>
                 <div className="modifierWrapper">
                 <h4 className="draftConfigureHeader">Add modifiers:</h4>
-                <p>Mods here</p>
+                <hr/>
                 <div className="modifiers">
                     {userOwnedMods.map(modName => {
                         let modObject = ModifierMap[modName as ModifierMapKey];
-                        return <ModifierActivation key={modObject.name} modifier={modObject} onclick={() => toggleMod(modName)} isActive={modifiersActive.includes(modName)}></ModifierActivation>
+                        return (
+                        <div className="activationRow" key={modObject.name}>
+                            <ModifierActivation key={modObject.name} modifier={modObject} onclick={() => toggleMod(modName)} isActive={modifiersActive.includes(modName)}></ModifierActivation>
+                            <hr></hr>
+                        </div>
+                        )
                     })}
                 </div>
                 </div>
