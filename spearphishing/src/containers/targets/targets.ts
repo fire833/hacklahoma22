@@ -1,12 +1,12 @@
 import { AttackTypes } from './AttackTypes';
-import { Target, UserOccupation } from './TargetContainer'
+import { Target, TargetOccupation } from './TargetContainer'
 
-export const GlobalUsers: Target[] = [{
-    Gender: "male",
+export const GlobalTargets: Target[] = [{
+    Gender: "female",
     Picture: "", // TBD
     Age: 25,
     Name: "Julia Childs",
-    Occupation: UserOccupation.Accountant,
+    Occupation: TargetOccupation.Accountant,
     DataPayoutMin: 1,
     DataPayoutRange: 1,
     Trust: 50,
@@ -19,7 +19,7 @@ export const GlobalUsers: Target[] = [{
     Picture: "", // TBD
     Age: 39,
     Name: "Dr. J",
-    Occupation: UserOccupation.Professor,
+    Occupation: TargetOccupation.Professor,
     DataPayoutMin: 4,
     DataPayoutRange: 4,
     Trust: 10,
@@ -32,7 +32,7 @@ export const GlobalUsers: Target[] = [{
     Picture: "", // TBD
     Age: 22,
     Name: "Zendaya",
-    Occupation: UserOccupation.Actor,
+    Occupation: TargetOccupation.Actor,
     DataPayoutMin: 2,
     DataPayoutRange: 2,
     Trust: 50,
@@ -45,7 +45,7 @@ export const GlobalUsers: Target[] = [{
     Picture: "", // TBD
     Age: 39,
     Name: "Grandma Byrd",
-    Occupation: UserOccupation.Retired,
+    Occupation: TargetOccupation.Retired,
     DataPayoutMin: 0,
     DataPayoutRange: 1,
     Trust: 70,
@@ -61,8 +61,8 @@ export function GetRandomUser(): Target {
 
     if (false) {
         // let fetch()
-        return GlobalUsers[0];
+        return GlobalTargets[0];
     } else {
-        return GlobalUsers[Math.floor(Math.random() * GlobalUsers.length)];
+        return GlobalTargets[Math.floor(Math.random() * GlobalTargets.length)];
     }
 }

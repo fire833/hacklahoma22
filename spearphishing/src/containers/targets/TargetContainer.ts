@@ -1,12 +1,12 @@
 import { AttackTypes } from './AttackTypes';
 import './targets'
-import { GlobalUsers } from './targets';
+import { GlobalTargets } from './targets';
 
-export const PullUserFromInternet: boolean = false;
+export const PullTargetFromInternet: boolean = false;
 
 // user interactions that can be searched by/used for reference.
 
-export enum UserOccupation {
+export enum TargetOccupation {
     Unemployed,
     Retired,
     BusinessPerson,
@@ -18,10 +18,9 @@ export enum UserOccupation {
     Nurse,
     AirlinePilot,
     ArmySergeant,
-    Professor // Public elements
-    ,
-    Actor // Specify the default baseline trust of the target.
-}   
+    Professor, // Public elements
+    Actor, // Specify the default baseline trust of the target.
+}
 
 // Specifies a user type that should be unmarshalled from a json object.
 export type Target = {
@@ -29,7 +28,7 @@ export type Target = {
     // Public elements
 
     Name: string,
-    Occupation: UserOccupation,
+    Occupation: TargetOccupation,
     Age: number,
     // Male or female
     Gender: "male" | "female",
@@ -51,5 +50,5 @@ export type Target = {
 
 
 export function GetRandomUser(): Target {
-    return GlobalUsers[Math.floor(Math.random() * GlobalUsers.length)];
+    return GlobalTargets[Math.floor(Math.random() * GlobalTargets.length)];
 }
