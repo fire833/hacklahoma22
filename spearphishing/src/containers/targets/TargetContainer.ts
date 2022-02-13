@@ -46,6 +46,7 @@ export type Target = {
     DataPayoutRange: number,
 
     ResistantAttackTypes: AttackTypes[],
+    VulnerableAttackTypes: AttackTypes[],
 }
 
 
