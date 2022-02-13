@@ -56,4 +56,5 @@ export enum UserOccupation {
     AirlinePilot,
     ArmySergeant,
     Professor,
+    Actor,
 }   
