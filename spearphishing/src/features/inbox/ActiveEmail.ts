@@ -1,6 +1,6 @@
 export enum InboxEmailKind {
-    BossEmail,
-    OutgoingDraft,
-    IntroEmail,
-    TargetBrief
+    BossEmail = "Boss Email",
+    OutgoingDraft = "Outgoing Draft",
+    IntroEmail = "Intro Email",
+    TargetBrief = "Target Brief",
 }

@@ -22,7 +22,7 @@ export class NewsEmailTemplate {
 
 export function GetRandomNewsEmailTemplate(type: NewsType): NewsEmailTemplate {
     switch (type) {
-        case NewsType.LocalPositive: 
+        case NewsType.LocalPositive:
             let e: NewsEmail = LocalGoodNews[Math.floor(Math.random() * LocalGoodNews.length)];
             return new NewsEmailTemplate(e);
         case NewsType.LocalNegative:
@@ -31,7 +31,7 @@ export function GetRandomNewsEmailTemplate(type: NewsType): NewsEmailTemplate {
         case NewsType.LocalHorrible:
             let e2: NewsEmail = LocalHorribleNews[Math.floor(Math.random() * LocalHorribleNews.length)];
             return new NewsEmailTemplate(e2);
-        case NewsType.GlobalPositive: 
+        case NewsType.GlobalPositive:
             let e3: NewsEmail = GlobalGoodNews[Math.floor(Math.random() * GlobalGoodNews.length)];
             return new NewsEmailTemplate(e3);
         case NewsType.GlobalNegative:

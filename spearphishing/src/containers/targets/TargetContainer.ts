@@ -7,19 +7,19 @@ export const PullTargetFromInternet: boolean = false;
 // user interactions that can be searched by/used for reference.
 
 export enum TargetOccupation {
-    Unemployed,
-    Retired,
-    BusinessPerson,
-    BankingPerson,
-    Cybersecurity,
-    Accountant,
-    Securityresearcher,
-    GroceryStoreBagger,
-    Nurse,
-    AirlinePilot,
-    ArmySergeant,
-    Professor, // Public elements
-    Actor, // Specify the default baseline trust of the target.
+    Unemployed = "Unemployed",
+    Retired = "Retired",
+    BusinessPerson = "Business Person",
+    BankingPerson = "Banking Person",
+    Cybersecurity = "Cybersecurity",
+    Accountant = "Accountant",
+    SecurityResearcher = "Security Researcher",
+    GroceryStoreBagger = "Grocery Store Bagger",
+    Nurse = "Nurse",
+    AirlinePilot = "Airline Pilot",
+    ArmySergeant = "Army Sargeant",
+    Professor = "Professor", // Public elements
+    Actor = "Actor", // Specify the default baseline trust of the target.
 }
 
 // Specifies a user type that should be unmarshalled from a json object.
