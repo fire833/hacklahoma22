@@ -5,6 +5,7 @@ import { GlobalUsers } from './targets';
 export const PullUserFromInternet: boolean = false;
 
 // user interactions that can be searched by/used for reference.
+
 export enum UserOccupation {
     Unemployed,
     Retired,
@@ -17,6 +18,9 @@ export enum UserOccupation {
     Nurse,
     AirlinePilot,
     ArmySergeant,
+    Professor // Public elements
+    ,
+    Actor // Specify the default baseline trust of the target.
 }   
 
 // Specifies a user type that should be unmarshalled from a json object.
