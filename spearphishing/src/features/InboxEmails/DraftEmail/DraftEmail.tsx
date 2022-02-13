@@ -7,6 +7,13 @@ import { InboxEmailProps } from "../InboxEmailProps";
 import { EmailSkeleton } from "../SharedComponents/EmailSkeleton";
 import { AttackTypes } from "../../../containers/targets/AttackTypes";
 import React, { useState, ChangeEvent } from 'react';
+import { BankResetPasswordEmail } from "./EmailAttackStrategies/BankResetPasswordEmail";
+import { BossWantsFileCheckEmail } from "./EmailAttackStrategies/BossWantsFileCheckEmail";
+import { NigerianPrinceEmail } from "./EmailAttackStrategies/NigerianPrinceEmail";
+import { RelativeInPrisonEmail } from "./EmailAttackStrategies/RelativeInPrisonEmail";
+import { RequestChildSupportPregnancyEmail } from "./EmailAttackStrategies/RequestChildSupportPregnancyEmail";
+import { TikTokVerifyAddressEmail } from "./EmailAttackStrategies/TikTokVerifyAddressEmail";
+import { ThreatenPictureLeakEmail } from "./EmailAttackStrategies/ThreatenPictureLeakEmail";
 
 type DraftEmailProps = {
     children?: any,
@@ -17,7 +24,44 @@ type DraftEmailData = {
     target: Target
 }
 
-function serveTemplate(props: AttackTypes) {
+function serveTemplate(attack: string) {
+
+    switch (attack) {
+        case AttackTypes.BankResetPassword:
+            return (
+                <BankResetPasswordEmail></BankResetPasswordEmail>
+            )
+        case AttackTypes.BossWantsFileCheck:
+            return (
+                <BossWantsFileCheckEmail></BossWantsFileCheckEmail>
+            )
+        case AttackTypes.NigerianPrince:
+            return (
+                <NigerianPrinceEmail></NigerianPrinceEmail>
+                )
+        case AttackTypes.RelativeInPrison:
+            return (
+                <RelativeInPrisonEmail></RelativeInPrisonEmail>
+                )
+        case AttackTypes.RequestChildSupportPregnancy:
+            return (
+                <RequestChildSupportPregnancyEmail></RequestChildSupportPregnancyEmail>
+                )
+        case AttackTypes.ThreatenPictureLeak:
+            return (
+                <ThreatenPictureLeakEmail></ThreatenPictureLeakEmail>
+                )
+        case AttackTypes.TikTokVerifyAddress:
+            return (
+                <TikTokVerifyAddressEmail></TikTokVerifyAddressEmail>
+                )
+        default:
+            return (
+                <p></p>
+            )
+
+    }
+
 }
 
 export function DraftEmail(props: DraftEmailProps) {
@@ -37,11 +81,14 @@ export function DraftEmail(props: DraftEmailProps) {
             <select value={templateType} onChange={(evt: ChangeEvent<HTMLSelectElement>) => setTemplate(evt.target.value)}>
                 <option value={AttackTypes.BankResetPassword}>{AttackTypes.BankResetPassword.toString()}</option>
                 <option value={AttackTypes.BossWantsFileCheck}>{AttackTypes.BossWantsFileCheck.toString()}</option>
+                <option value={AttackTypes.NigerianPrince}>{AttackTypes.NigerianPrince.toString()}</option>
+                <option value={AttackTypes.RelativeInPrison}>{AttackTypes.RelativeInPrison.toString()}</option>
+                <option value={AttackTypes.RequestChildSupportPregnancy}>{AttackTypes.RequestChildSupportPregnancy.toString()}</option>
+                <option value={AttackTypes.ThreatenPictureLeak}>{AttackTypes.ThreatenPictureLeak.toString()}</option>
+                <option value={AttackTypes.TikTokVerifyAddress}>{AttackTypes.TikTokVerifyAddress.toString()}</option>
             </select>
 
-            <p>Select email modifiers:</p>
-
-            <hr></hr>
+            {serveTemplate(templateType)}
 
             <p>Hello, i am ur br0ter</p>
         </EmailSkeleton >
