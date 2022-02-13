@@ -5,4 +5,31 @@
     background-color: #0078ED;
     color: white;
     padding-left: 2em;
+
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+
+    border-bottom: 1px solid white;
+}
+
+.timer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25em;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.calendarIcon {
+    margin-top: 3px;
+}
+
+.gameState{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
 }
