@@ -1,6 +1,8 @@
-import { BossEmail } from "../../features/InboxEmails/BossEmail/BossEmail";
 
-export const HappyBossEmails: []BossEmail = [
+export const Boring: boolean = false;
+// import { BossEmail } from "./BossEmailTemplates";
+
+// export const HappyBossEmails: BossEmail[] = [
     
-]
+// ]
 

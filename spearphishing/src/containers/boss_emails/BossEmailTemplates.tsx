@@ -1,19 +1,18 @@
-import { BossEmail } from "./boss";
-import { Target } from "../targets/targets"
+// import { Target } from "../targets/targets"
 
 // Specifies a boss email template.
-export type BossEmail = {
-    Targets?: Target[],
+// export type BossEmail = {
+//     Targets?: Target[],
     
-}
+// }
 
 // returns a template on how thw boss be feeling.
 export class BossEmailTemplate {
-    Email: BossEmail;
+    //Email: BossEmail;
     Status: BossEmailStatus;
 
     constructor() {
-        this.Email = BossEmail;
+       // this.Email = BossEmail;
         this.Status = BossEmailStatus.HappyWithWork;
     }
 }
