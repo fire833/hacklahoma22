@@ -2,6 +2,8 @@ import { IncomingEmail } from "../../inbox/inboxSlice";
 import { EmailBody } from "./EmailBody";
 import { EmailHeader } from "./EmailHeader";
 
+import "./EmailSkeleton.css";
+
 interface EmailSkeletonProps {
     email: IncomingEmail,
     children: any

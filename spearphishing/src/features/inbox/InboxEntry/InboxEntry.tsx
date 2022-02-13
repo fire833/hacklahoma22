@@ -1,10 +1,12 @@
 import { useAppDispatch } from '../../../app/hooks'
+import { EmailAvatar } from '../../InboxEmails/SharedComponents/EmailAvatar';
 import { IncomingEmail, selectEmail } from '../inboxSlice'
 import './InboxEntry.css'
 
 interface InboxEntryProps {
     email: IncomingEmail,
-    index: number
+    index: number,
+    isActive: Boolean
 }
 
 export function InboxEntry(props: InboxEntryProps) {
@@ -20,9 +22,9 @@ export function InboxEntry(props: InboxEntryProps) {
     }
 
     return (
-        <div className="InboxEntry" onClick={activateEmail}>
+        <div className={"InboxEntry " + (props.isActive ? " active " : " ")} onClick={activateEmail} >
             <div className='iconWrapper'>
-                <div className='fakeIcon'></div>
+                <EmailAvatar email={props.email}></EmailAvatar>
             </div>
             <div className='summaryWrapper'>
                 <div className='senderRow summaryRow'>

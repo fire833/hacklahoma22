@@ -1,0 +1,29 @@
+
+
+.EmailHeader p{
+    margin: 0;
+}
+
+.EmailHeader h2{
+    margin-bottom: 0.4em;
+}
+
+.EmailHeader hr{
+    margin-top: 1em;
+}
+
+.lowerRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.lowerEmailData{
+    margin-left: 1em;
+}
+
+.deemph{
+    font-weight: lighter;
+    color: rgba(0, 0, 0, 0.5);
+}

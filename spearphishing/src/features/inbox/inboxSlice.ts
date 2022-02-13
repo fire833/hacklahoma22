@@ -21,7 +21,7 @@ const initialState: InboxState = {
         {
             blurb: "You're our lowest performer...",
             kind: InboxEmailKind.IntroEmail,
-            senderName: "Boss",
+            senderName: "The Bossman",
             subject: "Your last chance",
             data: {}
         }
