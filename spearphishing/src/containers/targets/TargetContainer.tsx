@@ -1,24 +1,33 @@
+import { AttackTypes } from './AttackTypes';
 import './targets'
 import { GlobalUsers } from './targets';
 
 export const PullUserFromInternet: boolean = false;
 
 // Specifies a user type that should be unmarshalled from a json object.
-export class Target {
-    Name: string;
-    Occupation: UserOccupation = UserOccupation.Unemployed;
-    Age: number;
+export type Target = {
+    
+    // Public elements
+    
+    Name: string, 
+    Occupation: UserOccupation,
+    Age: number,
     // Male or female
-    Gender: string;
+    Gender: "male" | "female",
     // Specify the URL to get the image for this person, need to decide how this will be implemented.
-    Picture: string;
+    Picture: string,
+    // Specify the default baseline trust of the target.
+    Trust: number,
 
-    constructor() {
-        this.Age = 1;
-        this.Gender = "male";
-        this.Name = "Silly McGilicuddy"
-        this.Picture = "https://google.com"
-    }
+    // Private elements
+
+    MoneyPayoutMin: number,
+    MoneyPayoutRange: number,
+
+    DataPayoutMin: number,
+    DataPayoutRange: number,
+
+    ResistantAttackTypes: AttackTypes[],
 }
 
 export function GetRandomUser(): Target {
