@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/BitsnBobs/spearphishing/build/static/css/main.429d5011.css",
-    "main.js": "/BitsnBobs/spearphishing/build/static/js/main.fc946bb7.js",
-    "index.html": "/BitsnBobs/spearphishing/build/index.html",
-    "main.429d5011.css.map": "/BitsnBobs/spearphishing/build/static/css/main.429d5011.css.map",
-    "main.fc946bb7.js.map": "/BitsnBobs/spearphishing/build/static/js/main.fc946bb7.js.map"
+    "main.css": "/spearphishing/build/static/css/main.429d5011.css",
+    "main.js": "/spearphishing/build/static/js/main.7a6cecb4.js",
+    "index.html": "/spearphishing/build/index.html",
+    "main.429d5011.css.map": "/spearphishing/build/static/css/main.429d5011.css.map",
+    "main.7a6cecb4.js.map": "/spearphishing/build/static/js/main.7a6cecb4.js.map"
   },
   "entrypoints": [
     "static/css/main.429d5011.css",
-    "static/js/main.fc946bb7.js"
+    "static/js/main.7a6cecb4.js"
   ]
 }
