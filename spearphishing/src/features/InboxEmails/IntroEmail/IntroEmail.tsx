@@ -1,4 +1,8 @@
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { GetRandomUser } from "../../../containers/targets/TargetContainer";
+import { acceptInitEmail } from "../../../player/playerSlice";
 import { InboxEmailKind } from "../../inbox/ActiveEmail";
+import { pushEmail } from "../../inbox/inboxSlice";
 import { InboxEmailProps } from "../InboxEmailProps";
 import { EmailSkeleton } from "../SharedComponents/EmailSkeleton";
 
@@ -7,7 +11,41 @@ export function IntroEmail(props: InboxEmailProps) {
 
     const ThisType: InboxEmailKind = InboxEmailKind.IntroEmail;
 
+    let dispatch = useAppDispatch();
+    let hasAcceptedInit = useAppSelector(state => state.player.hasAcceptedInitEmail);
+
+    
     if (props.activeEmail === null || props.activeEmail.kind !== ThisType) return <></>
+
+    
+
+    function sendInitialTargetBrief(){
+
+        if(hasAcceptedInit) return;
+        dispatch(
+            acceptInitEmail()
+        )
+
+        dispatch(
+            pushEmail(
+                {
+                    blurb: "Your daily target brief",
+                    kind: InboxEmailKind.TargetBrief,
+                    senderName: "The Bossman",
+                    subject: "Daily Brief",
+                    data: {
+                        targets: [
+                            GetRandomUser(),
+                            GetRandomUser(),
+                            GetRandomUser(),
+                            GetRandomUser(),
+                            GetRandomUser(),
+                        ]
+                    }
+                }
+            )
+        )
+    }
 
 
     return (
@@ -24,7 +62,7 @@ export function IntroEmail(props: InboxEmailProps) {
                 Just prove that you can do something.
             </p>
 
-            <button>
+            <button onClick={sendInitialTargetBrief}>
                 Gotcha, Boss
             </button>
         </EmailSkeleton>

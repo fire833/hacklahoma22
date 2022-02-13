@@ -22,8 +22,8 @@ export class Target {
 }
 
 export function GetRandomUser(): Target {
-    let users = require('./users.json');
-    let data = JSON.parse(users);
+    // let users = require('./users.json');
+    // let data = JSON.parse(users);
 
     if (PullUserFromInternet) {
         // let fetch()

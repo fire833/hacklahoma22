@@ -1,11 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 import inboxReducer from '../features/inbox/inboxSlice';
+import playerReducer from '../player/playerSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     inbox: inboxReducer,
+    player: playerReducer
   },
 });
 

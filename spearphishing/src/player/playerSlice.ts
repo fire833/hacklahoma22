@@ -5,12 +5,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
 interface PlayerState {
-    dummy: number
+    hasAcceptedInitEmail: boolean
 }
 
 
 let initialState: PlayerState = {
-    dummy: 0
+    hasAcceptedInitEmail: false
 }
 
 
@@ -18,11 +18,11 @@ export const playerSlice = createSlice({
     name: 'player',
     initialState: initialState,
     reducers: {
-        nothingReducer(currState, action: PayloadAction<number>){
-            currState.dummy += action.payload;
+        acceptInitEmail(currState){
+            currState.hasAcceptedInitEmail = true;
         }
     }
 })
 
-export const { nothingReducer } = playerSlice.actions;
+export const { acceptInitEmail } = playerSlice.actions;
 export default playerSlice.reducer;

@@ -19,7 +19,7 @@ export function Inbox(){
             {
                 inboxEmails.map((email, index) => {
                     return (<InboxEntry key={index} email={email} index={index} isActive={activeIndex === index}></InboxEntry>)
-                })
+                }).reverse()
             }
         </div>
     )
