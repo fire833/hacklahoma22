@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { GetRandomUser } from "../../../containers/targets/TargetContainer";
+import { GetRandomUser } from "../../../containers/targets/targets";
 import { acceptInitEmail } from "../../../player/playerSlice";
 import { InboxEmailKind } from "../../inbox/ActiveEmail";
 import { pushEmail } from "../../inbox/inboxSlice";

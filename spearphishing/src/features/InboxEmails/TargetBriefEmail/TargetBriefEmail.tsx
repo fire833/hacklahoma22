@@ -3,6 +3,7 @@ import { InboxEmailKind } from "../../inbox/ActiveEmail";
 import { IncomingEmail } from "../../inbox/inboxSlice";
 import { InboxEmailProps } from "../InboxEmailProps";
 import { EmailSkeleton } from "../SharedComponents/EmailSkeleton";
+import { TargetList } from "./TargetList/TargetList";
 
 
 export type TargetBriefData = {
@@ -22,15 +23,20 @@ export function TargetBriefEmail(props: TargetBriefProps) {
 
     let targetBriefData = props.activeEmail.data as TargetBriefData;
 
+    console.log(props);
+
+    console.log(targetBriefData);
+    
+    
+
     return (
         <EmailSkeleton email={props.activeEmail}>
            
            <h1>Target Brief</h1>
            <p>Here are your options for the day. As always, <b>you'll only have time to scam 3 of them.</b></p>
 
-           {targetBriefData.targets.map(target => {
-               <p>{JSON.stringify(target)}</p>
-           })}
+
+            <TargetList targets={targetBriefData.targets}></TargetList>
 
         </EmailSkeleton>
     )
