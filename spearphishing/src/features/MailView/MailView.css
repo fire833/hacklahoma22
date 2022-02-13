@@ -10,3 +10,21 @@
     border-left: 1px solid rgba(0, 0, 0, 0.3);
     overflow-y: scroll;
 }
+
+.noActiveEmailText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.noActiveEmailText h1{
+    margin: 0;
+}
+
+.noActiveEmailText h2{
+    margin: 0;
+}

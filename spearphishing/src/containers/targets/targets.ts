@@ -1,6 +1,7 @@
 import { RefactoredAttackTypeList } from './AttackTypes';
 import { Target, TargetOccupation } from './TargetContainer'
 
+
 export const GlobalTargets: Target[] = [{
     Gender: "Female",
     Picture: "", // TBD
@@ -411,3 +412,5 @@ export function GetRandomUser(): Target {
         return GlobalTargets[Math.floor(Math.random() * GlobalTargets.length)];
     }
 }
+
+(window as any).globaltargets = GlobalTargets;

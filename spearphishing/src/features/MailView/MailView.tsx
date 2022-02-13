@@ -20,6 +20,14 @@ export function MailView() {
     let activeEmail = activeIndex === null ? null : emails[activeIndex];
     return (
         <div className='MailView'>
+
+            {activeEmail == null && (
+                <div className='noActiveEmailText'>
+                    <h1>Open An Email</h1>
+                    <h2>Your inbox is to the left</h2>
+                </div>
+            )}
+
             <BossStatusEmail activeEmail={activeEmail}></BossStatusEmail>
 
             <DraftEmail activeEmail={activeEmail}></DraftEmail>
