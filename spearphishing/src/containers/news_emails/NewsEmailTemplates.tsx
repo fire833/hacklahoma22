@@ -20,7 +20,7 @@ export class NewsEmailTemplate {
     }
 }
 
-export function GetNewsEmailTemplate(type: NewsType): NewsEmailTemplate {
+export function GetRandomNewsEmailTemplate(type: NewsType): NewsEmailTemplate {
     switch (type) {
         case NewsType.LocalPositive: 
             let e: NewsEmail = LocalGoodNews[Math.floor(Math.random() * LocalGoodNews.length)];
