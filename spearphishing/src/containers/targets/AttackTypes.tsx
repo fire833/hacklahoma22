@@ -8,6 +8,5 @@ export enum AttackTypes {
     BossWantsFileCheck,
     RequestChildSupportPregnancy,
     ThreatenPictureLeak,
-    AmazonVerifyAddress,
     TikTokVerifyAddress
 }

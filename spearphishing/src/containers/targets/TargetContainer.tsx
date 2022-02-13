@@ -6,10 +6,10 @@ export const PullUserFromInternet: boolean = false;
 
 // Specifies a user type that should be unmarshalled from a json object.
 export type Target = {
-    
+
     // Public elements
-    
-    Name: string, 
+
+    Name: string,
     Occupation: UserOccupation,
     Age: number,
     // Male or female
@@ -50,9 +50,10 @@ export enum UserOccupation {
     BankingPerson,
     Cybersecurity,
     Accountant,
-    Securityresearcher,
+    SecurityResearcher,
     GroceryStoreBagger,
     Nurse,
     AirlinePilot,
     ArmySergeant,
+    Professor,
 }   
