@@ -57,8 +57,11 @@ export type Modifier = {
 
 */
 
-export const ModifierList: Modifier[] = [
-    {
+
+export type ModifierMapType = {[Property in keyof typeof ModifierList]: Modifier};
+export type ModifierMapKey = keyof typeof ModifierList;
+export const ModifierMap: ModifierMapType = {
+    "BannerAd": {
         name: "Banner Ad",
         description: "Your phishing attempt pays out more money, but is less credible",
         modifyCredibility: (credibility: number) =>{
@@ -70,5 +73,24 @@ export const ModifierList: Modifier[] = [
                 modifiedDataPaid: dataPaid,
             }
         }
+    },
+    "EmbedCryptoMiner": {
+        name: "Embed Crypto Miner",
+        description: "Greatly increases the monetary payout of an attempt, but greatly reduces credibility",
+        modifyCredibility: (credibility: number) => {
+            return credibility /= 4;
+        },
+        modifyPayout: (moneyPaid: number, dataPaid: number) => {
+            return {
+                modifiedMoneyPaid: moneyPaid * 4,
+                modifiedDataPaid: dataPaid
+            }
+        }
+        
     }
-];
+}
+
+export const ModifierList = {
+    BannerAd: "BannerAd",
+    EmbedCryptoMiner: "EmbedCryptoMiner"
+}

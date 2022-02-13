@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AttackTypes } from "../containers/targets/AttackTypes";
+import { AttackTypes, Modifier, ModifierList, ModifierMap } from "../containers/targets/AttackTypes";
 
 interface PlayerState {
     // DomainCapabilities: DomainCapabilities;
@@ -31,7 +31,9 @@ interface PlayerState {
 
     money: number,
 
-    data: number
+    data: number,
+
+    modifierNamesOwned: string[]
 }
 
 
@@ -46,7 +48,11 @@ let initialState: PlayerState = {
     hasAcceptedInitEmail: false,
     day_num: 0,
     money: 0,
-    data: 0
+    data: 0,
+    modifierNamesOwned: [
+        ModifierList.BannerAd,
+        ModifierList.EmbedCryptoMiner
+    ]
 
 }
 

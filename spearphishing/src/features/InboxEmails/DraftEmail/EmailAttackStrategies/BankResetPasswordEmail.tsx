@@ -4,11 +4,10 @@ import { addName, addLink } from "./GlobalDecisionMethods";
 // This needs some work but its a good start.
 export function BankResetPasswordEmail() {
     return (
-        <p>
+        <div className="emailContent">
             <p>
                 Hello{addName("user", "")},
             </p>
-
             <p>
                 Your bank account has been disabled due to an
                 extreme number of incorrect logins originating
@@ -16,14 +15,16 @@ export function BankResetPasswordEmail() {
                 go to the below link in order to reset your bank
                 password and secure your account.
             </p>
-
-            {addLink("https://mybank.co", "https://baankofamerica.com")}
-
+            <p>
+                {addLink("https://mybank.co", "https://baankofamerica.com")}
+            </p>
             <p>
                 Thank you very much,
-                <br></br>
-                Bank of America Security Team
             </p>
-        </p>
+            <p>
+                Your banking team
+            </p>
+        </div>
+
     )
 }

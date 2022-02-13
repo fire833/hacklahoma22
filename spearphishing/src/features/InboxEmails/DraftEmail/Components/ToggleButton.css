@@ -1,0 +1,39 @@
+
+
+
+.toggleBtn {
+    font-size: 1.2em;
+    padding: 0.3em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: white;
+
+    transition-property: all;
+    transition-duration: 0.1s;
+    margin-bottom: 0.2em;
+
+}
+
+.toggleBtn:hover{
+    background-color: #0078EDC3;
+    /* transition-property: background-color; */
+    /* transition-duration: 0.15s; */
+}
+
+.activeToggle{
+    background-color: #0078EDC3;
+}
+
+.activeToggle:hover{
+    /* background-color: white; */
+    /* transition-property: background-color; */
+    /* transition-duration: 0.15s; */
+}
+
+.inactiveToggle{
+    background-color: white;
+    color: black;
+    /* transition-property: color; */
+    /* transition-duration: 0.2s; */
+}

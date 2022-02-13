@@ -1,4 +1,6 @@
 
+import "./EmailBody.css";
+
 interface EmailBodyProps{
     data: any
     children: any
