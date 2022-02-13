@@ -43,6 +43,11 @@ export function TargetList(props: TargetListProps) {
     function submitChoices(){
         let targets = props.targets.filter((e, ind) => activatedIndicies.includes(ind));
 
+        if(targets.length !== 3){
+            alert("You must select 3 targets");
+            return;
+        }
+
         for(let t of targets){
             dispatch(
             pushEmail(

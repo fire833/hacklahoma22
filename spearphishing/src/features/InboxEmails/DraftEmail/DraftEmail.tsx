@@ -17,6 +17,7 @@ import { ThreatenPictureLeakEmail } from "./EmailAttackStrategies/ThreatenPictur
 
 import "./DraftEmail.css";
 import { ModifierActivation } from "./Components/ModifierActivation";
+import { sendPhishingEmail } from "../../../player/submitEmail";
 
 type DraftEmailProps = {
     children?: any,
@@ -74,7 +75,7 @@ export function DraftEmail(props: DraftEmailProps) {
     let [templateType, setTemplate] = useState("");
 
     let initialModsActive: string[] = [];
-    let [modifiersActive, setModifiersActive] = useState(initialModsActive);
+    let [modifierNamesActive, setModifiersActive] = useState(initialModsActive);
 
     let userOwnedMods = useAppSelector(state => state.player.modifierNamesOwned);
     console.log(userOwnedMods);
@@ -83,23 +84,34 @@ export function DraftEmail(props: DraftEmailProps) {
     function activateMod(modifierName: string) {
         console.log("activating");
 
-        if (!modifiersActive.includes(modifierName)) {
-            setModifiersActive([...modifiersActive, modifierName]);
+        if (!modifierNamesActive.includes(modifierName)) {
+            setModifiersActive([...modifierNamesActive, modifierName]);
         }
-        console.log("activcated", modifiersActive);
+        console.log("activcated", modifierNamesActive);
 
     }
 
     function toggleMod(modifierName: string) {
         console.log("toggling", modifierName);
 
-        let isActive = modifiersActive.includes(modifierName);
+        let isActive = modifierNamesActive.includes(modifierName);
         if (!isActive) activateMod(modifierName);
         else {
-            setModifiersActive(modifiersActive.filter(e => e !== modifierName))
+            setModifiersActive(modifierNamesActive.filter(e => e !== modifierName))
         }
-        console.log("adter", modifiersActive);
+        console.log("adter", modifierNamesActive);
 
+    }
+
+
+    function submitDraft(){
+        sendPhishingEmail(
+            target,
+            {
+                attackType: templateType as AttackTypes,
+                modifiersApplied: modifierNamesActive.map(e => ModifierMap[e as ModifierMapKey])
+            }
+        )
     }
 
     if (props.activeEmail === null || props.activeEmail.kind !== ThisType) return <></>
@@ -136,7 +148,7 @@ export function DraftEmail(props: DraftEmailProps) {
                             let modObject = ModifierMap[modName as ModifierMapKey];
                             return (
                                 <div className="activationRow" key={modObject.name}>
-                                    <ModifierActivation key={modObject.name} modifier={modObject} onclick={() => toggleMod(modName)} isActive={modifiersActive.includes(modName)}></ModifierActivation>
+                                    <ModifierActivation key={modObject.name} modifier={modObject} onclick={() => toggleMod(modName)} isActive={modifierNamesActive.includes(modName)}></ModifierActivation>
                                     <hr></hr>
                                 </div>
                             )
@@ -149,6 +161,12 @@ export function DraftEmail(props: DraftEmailProps) {
             <h4 className="draftConfigureHeader">Preview E-Mail</h4>
 
             {serveTemplate(templateType)}
+
+            <hr/>
+
+            <div className="submitRow">
+                <button onClick={() => submitDraft()} className="sendBtn">Send E-Mail</button>
+            </div> 
         </EmailSkeleton >
     )
 }

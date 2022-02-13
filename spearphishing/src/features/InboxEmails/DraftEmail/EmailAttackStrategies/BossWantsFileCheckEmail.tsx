@@ -1,7 +1,7 @@
 
 export function BossWantsFileCheckEmail() {
     return (
-        <p>
+        <div>
             <p>
                 Good morning,
             </p>
@@ -17,6 +17,6 @@ export function BossWantsFileCheckEmail() {
                 <br></br>
                 Your Boss
             </p>
-        </p>
+        </div>
     )
 }
