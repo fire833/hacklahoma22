@@ -159,6 +159,244 @@ export const GlobalTargets: Target[] = [{
     ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 
+},
+{
+    Gender: "Male",
+    Picture: "", // TBD
+    Age: 20,
+    Name: "Matthew Carroll",
+    Occupation: TargetOccupation.Unemployed,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 1,
+    MoneyPayoutMin: 25,
+    MoneyPayoutRange: 100,
+    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
+},
+{
+    Gender: "Male",
+    Picture: "", // TBD
+    Age: 20,
+    Name: "Aaron Pierce",
+    Occupation: TargetOccupation.Unemployed,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 1,
+    MoneyPayoutMin: 25,
+    MoneyPayoutRange: 100,
+    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
+},
+{
+    Gender: "Male",
+    Picture: "", // TBD
+    Age: 19,
+    Name: "Kendall Tauser",
+    Occupation: TargetOccupation.Developer,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 1,
+    MoneyPayoutMin: 25,
+    MoneyPayoutRange: 100,
+    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
+},
+{
+    Gender: "Female",
+    Picture: "", // TBD
+    Age: 83,
+    Name: "Grandma Pidgin",
+    Occupation: TargetOccupation.Retired,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 50,
+    MoneyPayoutMin: 250,
+    MoneyPayoutRange: 1000,
+    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: [AttackTypes.RelativeInPrison]
+},
+{
+    Gender: "Male",
+    Picture: "", // TBD
+    Age: 77,
+    Name: "Bill Gates",
+    Occupation: TargetOccupation.Retired,
+    DataPayoutMin: 50,
+    DataPayoutRange: 50,
+    Trust: 5,
+    MoneyPayoutMin: 1000,
+    MoneyPayoutRange: 5000,
+    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RequestChildSupportPregnancy],
+    VulnerableAttackTypes: []
+},
+{
+    Gender: "Female",
+    Picture: "", // TBD
+    Age: 57,
+    Name: "Phyllis Vance",
+    Occupation: TargetOccupation.SalesPerson,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 35,
+    MoneyPayoutMin: 25,
+    MoneyPayoutRange: 100,
+    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: [AttackTypes.RelativeInPrison]
+},
+{
+    Gender: "Male",
+    Picture: "", // TBD
+    Age: 56,
+    Name: "Michael Scott",
+    Occupation: TargetOccupation.Unemployed,
+    DataPayoutMin: 5,
+    DataPayoutRange: 10,
+    Trust: 75,
+    MoneyPayoutMin: 100,
+    MoneyPayoutRange: 250,
+    ResistantAttackTypes: [],
+    VulnerableAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress]
+},
+{
+    Gender: "Female",
+    Picture: "", // TBD
+    Age: 58,
+    Name: "Lesley Knope",
+    Occupation: TargetOccupation.GovernmentWorker,
+    DataPayoutMin: 50,
+    DataPayoutRange: 250,
+    Trust: 47,
+    MoneyPayoutMin: 100,
+    MoneyPayoutRange: 250,
+    ResistantAttackTypes: [AttackTypes.BossWantsFileCheck, AttackTypes.BankResetPassword],
+    VulnerableAttackTypes: [AttackTypes.RelativeInPrison]
+},
+{
+    Gender: "Male",
+    Picture: "", // TBD
+    Age: 70,
+    Name: "Ron Swanson",
+    Occupation: TargetOccupation.GovernmentWorker,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 5,
+    MoneyPayoutMin: 100,
+    MoneyPayoutRange: 250,
+    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
+},
+{
+    Gender: "Male",
+    Picture: "", // TBD
+    Age: 45,
+    Name: "Tom Brady",
+    Occupation: TargetOccupation.Retired,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 45,
+    MoneyPayoutMin: 500,
+    MoneyPayoutRange: 10000,
+    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
+},
+{
+    Gender: "Male",
+    Picture: "", // TBD
+    Age: 150,
+    Name: "Kenneth Parcel",
+    Occupation: TargetOccupation.Page,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 80,
+    MoneyPayoutMin: 100,
+    MoneyPayoutRange: 250,
+    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
+},
+{
+    Gender: "Male",
+    Picture: "", // TBD
+    Age: 70,
+    Name: "Marty McFly",
+    Occupation: TargetOccupation.Retired,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 5,
+    MoneyPayoutMin: 100,
+    MoneyPayoutRange: 250,
+    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
+},
+{
+    Gender: "Female",
+    Picture: "", // TBD
+    Age: 55,
+    Name: "Lorraine Halmler",
+    Occupation: TargetOccupation.Cybersecurity,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 5,
+    MoneyPayoutMin: 50,
+    MoneyPayoutRange: 150,
+    ResistantAttackTypes: [AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
+},
+{
+    Gender: "Female",
+    Picture: "", // TBD
+    Age: 27,
+    Name: "Tracy Jimenez",
+    Occupation: TargetOccupation.Page,
+    DataPayoutMin: 10,
+    DataPayoutRange: 15,
+    Trust: 40,
+    MoneyPayoutMin: 100,
+    MoneyPayoutRange: 250,
+    ResistantAttackTypes: [AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck],
+    VulnerableAttackTypes: []
+},
+{
+    Gender: "Female",
+    Picture: "", // TBD
+    Age: 24,
+    Name: "Theresa Carpenter",
+    Occupation: TargetOccupation.AirlinePilot,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 20,
+    MoneyPayoutMin: 20,
+    MoneyPayoutRange: 150,
+    ResistantAttackTypes: [ AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
+},
+{
+    Gender: "Male",
+    Picture: "", // TBD
+    Age: 29,
+    Name: "Derrick Baker",
+    Occupation: TargetOccupation.SalesPerson,
+    DataPayoutMin: 1,
+    DataPayoutRange: 5,
+    Trust: 20,
+    MoneyPayoutMin: 20,
+    MoneyPayoutRange: 150,
+    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: [AttackTypes.BossWantsFileCheck]
+},
+{
+    Gender: "Male",
+    Picture: "", // TBD
+    Age: 25,
+    Name: "Tracy Sanders",
+    Occupation: TargetOccupation.Developer,
+    DataPayoutMin: 5,
+    DataPayoutRange: 30,
+    Trust: 10,
+    MoneyPayoutMin: 100,
+    MoneyPayoutRange: 150,
+    ResistantAttackTypes: [],
+    VulnerableAttackTypes: [AttackTypes.BossWantsFileCheck]
 },];
 
 

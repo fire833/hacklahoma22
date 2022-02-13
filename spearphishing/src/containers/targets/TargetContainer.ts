@@ -21,6 +21,9 @@ export enum TargetOccupation {
     Professor = "Professor", // Public elements
     Actor = "Actor", // Specify the default baseline trust of the target.
     Developer = "Developer",
+    SalesPerson = "Salesperson",
+    GovernmentWorker = "Government Worker",
+    Page = "Page",
 }
 
 // Specifies a user type that should be unmarshalled from a json object.
