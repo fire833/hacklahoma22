@@ -18,3 +18,22 @@
     margin-bottom: 0;
     margin-top: 0;
 }
+
+.sendBtn{
+    font-size: 1.5em;
+    padding: 0.3em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: black;
+
+    transition-property: all;
+    transition-duration: 0.1s;
+    margin-bottom: 0.2em;
+
+}
+
+.sendBtn:hover{
+    background-color: #0078EDC3;
+    color: white;
+}

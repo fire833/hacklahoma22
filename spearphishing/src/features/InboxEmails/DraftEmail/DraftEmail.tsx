@@ -162,11 +162,11 @@ export function DraftEmail(props: DraftEmailProps) {
 
             {serveTemplate(templateType)}
 
-            <br/>
+            <hr/>
 
             <div className="submitRow">
-                <button onClick={() => submitDraft()}>Send</button>
-            </div>
+                <button onClick={() => submitDraft()} className="sendBtn">Send E-Mail</button>
+            </div> 
         </EmailSkeleton >
     )
 }
