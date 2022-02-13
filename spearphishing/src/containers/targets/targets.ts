@@ -13,6 +13,7 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 100,
     MoneyPayoutRange: 100,
     ResistantAttackTypes: [AttackTypes.NigerianPrince],
+    VulnerableAttackTypes: []
 },
 {
     Gender: "male",
@@ -26,6 +27,7 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 0,
     MoneyPayoutRange: 100,
     ResistantAttackTypes: [AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
 },
 {
     Gender: "female",
@@ -39,6 +41,7 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 300,
     MoneyPayoutRange: 200,
     ResistantAttackTypes: [AttackTypes.BossWantsFileCheck, AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince],
+    VulnerableAttackTypes: []
 },
 {
     Gender: "female",
@@ -52,6 +55,8 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 300,
     MoneyPayoutRange: 200,
     ResistantAttackTypes: [AttackTypes.TikTokVerifyAddress, AttackTypes.RequestChildSupportPregnancy, AttackTypes.BossWantsFileCheck],
+    VulnerableAttackTypes: []
+
 },
 {
     Gender: "male",
@@ -65,6 +70,7 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 50,
     MoneyPayoutRange: 100,
     ResistantAttackTypes: [AttackTypes.TikTokVerifyAddress, AttackTypes.RequestChildSupportPregnancy, AttackTypes.BossWantsFileCheck, AttackTypes.NigerianPrince],
+    VulnerableAttackTypes: []
 },
 {
     Gender: "male",
@@ -78,6 +84,8 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 50,
     MoneyPayoutRange: 100,
     ResistantAttackTypes: [AttackTypes.TikTokVerifyAddress, AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince],
+    VulnerableAttackTypes: []
+
 },
 {
     Gender: "male",
@@ -91,6 +99,7 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 30,
     MoneyPayoutRange: 150,
     ResistantAttackTypes: [AttackTypes.TikTokVerifyAddress, AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak],
+    VulnerableAttackTypes: []
 },
 {
     Gender: "female",
@@ -104,6 +113,8 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 30,
     MoneyPayoutRange: 150,
     ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak],
+    VulnerableAttackTypes: []
+
 },
 {
     Gender: "female",
@@ -117,6 +128,8 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 500,
     MoneyPayoutRange: 1500,
     ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak],
+    VulnerableAttackTypes: []
+
 },
 {
     Gender: "female",
@@ -130,7 +143,10 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 500,
     MoneyPayoutRange: 1500,
     ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak],
+    VulnerableAttackTypes: []
+
 },
+
 {
     Gender: "male",
     Picture: "", // TBD
@@ -143,6 +159,7 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 50,
     MoneyPayoutRange: 100,
     ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
 },
 {
     Gender: "female",
@@ -156,6 +173,8 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 75,
     MoneyPayoutRange: 500,
     ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    VulnerableAttackTypes: []
+ 
 },];
 
 
