@@ -31,7 +31,6 @@ export function DraftEmail(props: InboxEmailProps) {
             <select value={templateType} onChange={(evt: ChangeEvent<HTMLSelectElement>) => setTemplate(evt.target.value)}>
                 <option value={AttackTypes.BankResetPassword}>{AttackTypes.BankResetPassword.toString()}</option>
                 <option value={AttackTypes.BossWantsFileCheck}>{AttackTypes.BossWantsFileCheck.toString()}</option>
-                {console.log(templateType)} {/* Stretch goal: Make this represent internally as  */}
             </select>
 
             <p>Select email modifiers:</p>
