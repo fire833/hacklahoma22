@@ -4,6 +4,7 @@ import { InboxEmailKind } from '../inbox/ActiveEmail';
 import { BossEmail } from '../InboxEmails/BossEmail/BossEmail';
 import { IntroEmail } from '../InboxEmails/IntroEmail/IntroEmail';
 import { OutgoingDraftEmail } from '../InboxEmails/OutgoingDraftEmail/OutgoingDraftEmail';
+import { TargetBriefEmail } from '../InboxEmails/TargetBriefEmail/TargetBriefEmail';
 import "./MailView.css";
 
 export function MailView() {
@@ -21,6 +22,8 @@ export function MailView() {
             <OutgoingDraftEmail activeEmail={activeIndex === null ? null : emails[activeIndex]}></OutgoingDraftEmail>
 
             <IntroEmail activeEmail={activeEmail}></IntroEmail>
+
+            <TargetBriefEmail activeEmail={activeEmail}></TargetBriefEmail>
 
         </div>
     )

@@ -8,6 +8,7 @@ export function Inbox(){
 
     const inboxEmails = useAppSelector(state => state.inbox.emails);
 
+    const activeIndex = useAppSelector(staet => staet.inbox.activeEmailIndex)
 
     console.log(inboxEmails);
     
@@ -17,7 +18,7 @@ export function Inbox(){
         <div className='inbox'>
             {
                 inboxEmails.map((email, index) => {
-                    return (<InboxEntry key={index} email={email} index={index}></InboxEntry>)
+                    return (<InboxEntry key={index} email={email} index={index} isActive={activeIndex === index}></InboxEntry>)
                 })
             }
         </div>
