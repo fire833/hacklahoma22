@@ -10,19 +10,25 @@ import React, { useState, ChangeEvent } from 'react';
 
 type DraftEmailProps = {
     children?: any,
-    activeEmail: IncomingEmail
+    activeEmail: IncomingEmail | null
 };
+
+type DraftEmailData = {
+    target: Target
+}
 
 function serveTemplate(props: AttackTypes) {
 }
 
-export function DraftEmail(props: InboxEmailProps) {
+export function DraftEmail(props: DraftEmailProps) {
 
     const ThisType: InboxEmailKind = InboxEmailKind.OutgoingDraft;
     let dispatch = useAppDispatch();
     const [templateType, setTemplate] = useState("");
-
     if (props.activeEmail === null || props.activeEmail.kind !== ThisType) return <></>
+
+    
+    let target = (props.activeEmail.data as DraftEmailData).target;
 
     return (
         <EmailSkeleton email={props.activeEmail}>

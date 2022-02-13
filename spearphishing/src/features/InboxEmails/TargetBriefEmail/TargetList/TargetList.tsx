@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { pushEmail, removeActiveEmail } from "../../../inbox/inboxSlice";
 import { InboxEmailKind } from "../../../inbox/ActiveEmail";
+import { useAppDispatch } from "../../../../app/hooks";
 
 type TargetListProps = {
     targets: Target[],
@@ -15,7 +16,7 @@ export function TargetList(props: TargetListProps) {
 
     let initState: number[] = [];
     let [activatedIndicies, setActivedIndicies] = useState(initState);
-    let dispatch = useDispatch();
+    let dispatch = useAppDispatch();
 
     function activateIndex(ind: number) {
         if (activatedIndicies.includes(ind)) {
@@ -47,7 +48,9 @@ export function TargetList(props: TargetListProps) {
             pushEmail(
                 {
                     blurb: "Another phishing e-mail to write",
-                    data: {},
+                    data: {
+                        target: t
+                    },
                     kind: InboxEmailKind.OutgoingDraft,
                     senderName: "You",
                     subject: "[Draft] to: " + t.Name

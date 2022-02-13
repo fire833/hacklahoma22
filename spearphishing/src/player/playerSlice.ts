@@ -71,5 +71,5 @@ export const playerSlice = createSlice({
     }
 })
 
-export const { acceptInitEmail } = playerSlice.actions;
+export const { acceptInitEmail, addMoney, addData, advanceDay } = playerSlice.actions;
 export default playerSlice.reducer;
