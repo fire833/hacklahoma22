@@ -1,37 +1,43 @@
 import { useDispatch } from "react-redux";
 import { Modifier, RefactoredAttackTypeKey } from "../containers/targets/AttackTypes";
+import { RefactoredAttackTypeMap } from "../containers/targets/AttackTypes";
 import { Target } from "../containers/targets/TargetContainer";
 import { addData, addMoney, incrementDailyEmails } from "./playerSlice";
 
 import { store } from "../app/store"
+import { miniSerializeError } from "@reduxjs/toolkit";
 
 export type PhishingEmail = {
     attackType: RefactoredAttackTypeKey,
     modifiersApplied: Modifier[]
 }
 
+export function fenceCredibility(credibility: number) {
+    return Math.min(100, Math.max(0, credibility))
+}
+
 export function sendPhishingEmail(target: Target, phishingEmail: PhishingEmail) {
 
     let dispatch = store.dispatch;
 
+    // Take the target's base trust likelihood
     let credibility = target.Trust;
 
-    // somehow modify credibility based on attackType
-    // whether you add a flat value, or multiply by a number, who knows.
-
     if (target.VulnerableAttackTypes.includes(phishingEmail.attackType)) {
-        credibility *= 1.2
+        credibility = fenceCredibility(credibility * 1.2)
     };
 
     if (target.ResistantAttackTypes.includes(phishingEmail.attackType)) {
-        credibility *= 0.5;
+        credibility = fenceCredibility(credibility * 0.5)
     }
 
-    // now pass cred through all modifiers
-
+    // Pass credibility through all modifiers
     for (let mod of phishingEmail.modifiersApplied) {
-        credibility = mod.modifyCredibility(credibility);
+        credibility = fenceCredibility(mod.modifyCredibility(credibility))
     }
+
+    // Attack Type modifies likelihood last
+    credibility = fenceCredibility(RefactoredAttackTypeMap[phishingEmail.attackType].modifyCredibility(credibility, target));
 
     // now you have a freshly modified credibility, roll the die somehow
 
@@ -39,29 +45,25 @@ export function sendPhishingEmail(target: Target, phishingEmail: PhishingEmail) 
     console.log(phishSuccessful)
 
     if (phishSuccessful) {
-        // calculate earnings
+        // Calculate base earnings
+        let dollars_won = (target.MoneyPayoutMin + (credibility / 100) * target.MoneyPayoutRange);
+        let data_won = (target.DataPayoutMin + (credibility / 100) * target.DataPayoutRange);
 
-        let dollars_won = 1000;
-        let data_won = 1000;
-
+        // Apply modifiers to payout
         for (let mod of phishingEmail.modifiersApplied) {
             let result = mod.modifyPayout(dollars_won, data_won);
             dollars_won = result.modifiedMoneyPaid;
             data_won = result.modifiedDataPaid;
         }
 
-        // now you have final money and data earnings, add to user
+        // Round data and payout values
+        dollars_won = Math.round(dollars_won);
+        data_won = Math.round(data_won);
 
-
-        // dispatch might crash, if that happens its probably
-        // because react wants you to put this function and
-        // run it in a component
+        // Now you have final money and data earnings, add to user
         dispatch(addMoney(dollars_won))
         dispatch(addData(data_won))
     }
 
     dispatch(incrementDailyEmails())
-
-
-
 }
