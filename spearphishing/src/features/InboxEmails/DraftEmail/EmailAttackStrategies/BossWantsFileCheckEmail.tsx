@@ -1,7 +1,7 @@
 
 export function BossWantsFileCheckEmail() {
     return (
-        <div>
+        <div className="emailContent">
             <p>
                 Good morning,
             </p>

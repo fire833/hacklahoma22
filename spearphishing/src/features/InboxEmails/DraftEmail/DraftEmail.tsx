@@ -129,11 +129,11 @@ export function DraftEmail(props: DraftEmailProps) {
                 <h4 style={{ fontWeight: "normal", color: 'rgba(0, 0, 0, 0.8)', textDecoration: 'underline', display: 'inline-block' }}>Preparing Scam Against: </h4> <span className="draftConfigureHeader" style={{ textDecoration: "none" }}>{target.Name}</span>
 
                 <p className="draftConfigureHeader">Target Profile: </p>
-                <p>The target is a {target.Age} year old {target.Gender}. Occupation: {target.Occupation}</p>
+                <p>The target is a {target.Age} year old {target.Gender.toLowerCase()}. Occupation: {target.Occupation}</p>
             </div>
             <div className="draftConfigure">
                 <div className="attackTypeWrapper">
-                    <h4 className="draftConfigureHeader">Choose your attack type:</h4>
+                    <h4 className="draftConfigureHeader">Choose your template:</h4>
                     <select value={templateType} onChange={(evt: ChangeEvent<HTMLSelectElement>) => setTemplate(evt.target.value)}>
                         <option value={AttackTypes.BankResetPassword}>{AttackTypes.BankResetPassword.toString()}</option>
                         <option value={AttackTypes.BossWantsFileCheck}>{AttackTypes.BossWantsFileCheck.toString()}</option>

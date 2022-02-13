@@ -59,7 +59,7 @@ export type Modifier = {
 */
 
 
-export type ModifierMapType = {[Property in keyof typeof ModifierList]: Modifier};
+export type ModifierMapType = { [Property in keyof typeof ModifierList]: Modifier };
 export type ModifierMapKey = keyof typeof ModifierList;
 export const ModifierMap: ModifierMapType = {
     "BannerAd": {
@@ -89,7 +89,7 @@ export const ModifierMap: ModifierMapType = {
                 modifiedDataPaid: dataPaid
             }
         }
-        
+
     }
 }
 
