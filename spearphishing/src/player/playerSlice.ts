@@ -36,6 +36,8 @@ interface PlayerState {
     ObfuscateViaAlternatePayload: boolean;
     // General: General;
     UnlockedAttackVectors: AttackTypes[];
+
+    hasAcceptedInitEmail: boolean
 }
 
 
@@ -47,6 +49,7 @@ let initialState: PlayerState = {
     ObfuscateViaAlternatePayload: false,
     UnlockedAttackVectors: [],
     AdvancedDeceptionTechniques: false,
+    hasAcceptedInitEmail: false
 }
 
 
@@ -54,11 +57,11 @@ export const playerSlice = createSlice({
     name: 'player',
     initialState: initialState,
     reducers: {
-        nothingReducer(currState, action: PayloadAction<number>) {
-            // currState.dummy += action.payload;
+        acceptInitEmail(currState){
+            currState.hasAcceptedInitEmail = true;
         }
     }
 })
 
-export const { nothingReducer } = playerSlice.actions;
+export const { acceptInitEmail } = playerSlice.actions;
 export default playerSlice.reducer;

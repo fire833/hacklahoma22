@@ -2,10 +2,10 @@ import { AttackTypes } from './AttackTypes';
 import { Target, TargetOccupation } from './TargetContainer'
 
 export const GlobalTargets: Target[] = [{
-    Gender: "male",
+    Gender: "female",
     Picture: "", // TBD
     Age: 25,
-    Name: "Kevin Wolfram",
+    Name: "Julia Childs",
     Occupation: TargetOccupation.Accountant,
     DataPayoutMin: 1,
     DataPayoutRange: 1,
@@ -54,3 +54,15 @@ export const GlobalTargets: Target[] = [{
     ResistantAttackTypes: [AttackTypes.TikTokVerifyAddress, AttackTypes.RequestChildSupportPregnancy, AttackTypes.BossWantsFileCheck],
 },];
 
+
+export function GetRandomUser(): Target {
+    // let users = require('./users.json');
+    // let data = JSON.parse(users);
+
+    if (false) {
+        // let fetch()
+        return GlobalTargets[0];
+    } else {
+        return GlobalTargets[Math.floor(Math.random() * GlobalTargets.length)];
+    }
+}

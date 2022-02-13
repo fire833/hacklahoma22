@@ -5,6 +5,10 @@
   }
 }
 
+*{
+  box-sizing: border-box;
+}
+
 .App {
   display: grid;
   grid-template-columns: 2fr 6fr;
@@ -37,3 +41,4 @@
     transform: translateY(0px);
   }
 }
+

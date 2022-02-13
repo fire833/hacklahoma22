@@ -4,7 +4,25 @@ import { GlobalTargets } from './targets';
 
 export const PullTargetFromInternet: boolean = false;
 
-// Specifies a target type that should be unmarshalled from a json object.
+// user interactions that can be searched by/used for reference.
+
+export enum TargetOccupation {
+    Unemployed,
+    Retired,
+    BusinessPerson,
+    BankingPerson,
+    Cybersecurity,
+    Accountant,
+    Securityresearcher,
+    GroceryStoreBagger,
+    Nurse,
+    AirlinePilot,
+    ArmySergeant,
+    Professor, // Public elements
+    Actor, // Specify the default baseline trust of the target.
+}
+
+// Specifies a user type that should be unmarshalled from a json object.
 export type Target = {
 
     // Public elements
@@ -30,31 +48,7 @@ export type Target = {
     ResistantAttackTypes: AttackTypes[],
 }
 
-export function GetRandomTarget(): Target {
-    let targets = require('./targets.json');
-    let data = JSON.parse(targets);
 
-    if (PullTargetFromInternet) {
-        // let fetch()
-        return GlobalTargets[0];
-    } else {
-        return GlobalTargets[Math.floor(Math.random() * GlobalTargets.length)];
-    }
+export function GetRandomUser(): Target {
+    return GlobalTargets[Math.floor(Math.random() * GlobalTargets.length)];
 }
-
-// target interactions that can be searched by/used for reference.
-export enum TargetOccupation {
-    Unemployed,
-    Retired,
-    BusinessPerson,
-    BankingPerson,
-    Cybersecurity,
-    Accountant,
-    SecurityResearcher,
-    GroceryStoreBagger,
-    Nurse,
-    AirlinePilot,
-    ArmySergeant,
-    Professor,
-    Actor,
-}   

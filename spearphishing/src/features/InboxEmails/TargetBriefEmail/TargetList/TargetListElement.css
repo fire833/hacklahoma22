@@ -1,0 +1,24 @@
+
+
+.targetListElement{
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding-left: 0.75em;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+}
+
+.targetListElement:last-of-type{
+    border-bottom: none;
+}
+
+.checkboxWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox{
+    width: 2em;
+    height: 2em;
+}
