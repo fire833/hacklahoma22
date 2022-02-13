@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/spearphishing/build/static/css/main.ca0daf96.css",
+    "main.js": "/spearphishing/build/static/js/main.6052f01f.js",
+    "index.html": "/spearphishing/build/index.html",
+    "main.ca0daf96.css.map": "/spearphishing/build/static/css/main.ca0daf96.css.map",
+    "main.6052f01f.js.map": "/spearphishing/build/static/js/main.6052f01f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca0daf96.css",
+    "static/js/main.6052f01f.js"
+  ]
+}
