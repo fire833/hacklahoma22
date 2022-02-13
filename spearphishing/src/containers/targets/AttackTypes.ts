@@ -57,8 +57,11 @@ export type Modifier = {
 
 */
 
-export const ModifierList: Modifier[] = [
-    {
+
+export type ModifierMapType = {[Property in keyof typeof ModifierList]: Modifier};
+export type ModifierMapKey = keyof typeof ModifierList;
+export const ModifierMap: ModifierMapType = {
+    "BannerAd": {
         name: "Banner Ad",
         description: "Your phishing attempt pays out more money, but is less credible",
         modifyCredibility: (credibility: number) =>{
@@ -71,4 +74,8 @@ export const ModifierList: Modifier[] = [
             }
         }
     }
-];
+}
+
+export const ModifierList = {
+    BannerAd: "BannerAd"
+}

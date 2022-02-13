@@ -1,0 +1,20 @@
+
+
+
+.draftConfigure{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.modifierWrapper{
+    border-left: 1px solid black;
+    padding-left: 2em;
+}
+
+.draftConfigureHeader{
+    font-size: 1.5em;
+    font-weight: 1000;
+    color: #0078EDC3;
+    margin-bottom: 0;
+    margin-top: 0;
+}
