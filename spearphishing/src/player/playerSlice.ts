@@ -1,18 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AttackTypes } from "../containers/targets/AttackTypes";
 
-// type DomainCapabilities = {
-    
-// }
-
-// type PayloadCapabilities = {
-    
-// }
-
-// type General = {
-    
-// }
-
 interface PlayerState {
     // DomainCapabilities: DomainCapabilities;
     // You can have multiple levels of domain quality, ranged from 1-5.
@@ -57,7 +45,7 @@ export const playerSlice = createSlice({
     name: 'player',
     initialState: initialState,
     reducers: {
-        acceptInitEmail(currState){
+        acceptInitEmail(currState) {
             currState.hasAcceptedInitEmail = true;
         }
     }
