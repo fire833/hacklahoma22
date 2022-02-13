@@ -138,7 +138,7 @@ export function DraftEmail(props: DraftEmailProps) {
             <hr></hr>
             <div className="draftConfigure">
                 <div className="attackTypeWrapper">
-                    <h4 className="draftConfigureHeader">Choose your template:</h4>
+                    <h4 className="draftConfigureHeader">Choose your scam type:</h4>
                     <select value={templateType} onChange={(evt: ChangeEvent<HTMLSelectElement>) => setTemplate(evt.target.value as RefactoredAttackTypeKey)}>
                         <option selected disabled>-- Select Attack Type--</option>
 
@@ -159,8 +159,13 @@ export function DraftEmail(props: DraftEmailProps) {
                         <option value={RefactoredAttackTypeList.ThreatenPictureLeak}>{RefactoredAttackTypeList.ThreatenPictureLeak.toString()}</option>
                         <option value={RefactoredAttackTypeList.TikTokVerifyAddress}>{RefactoredAttackTypeList.TikTokVerifyAddress.toString()}</option> */}
                     </select>
-                    <p style={{ color: 'rgba(0, 0, 0, 1)', fontWeight: '300' }}>Different kinds of people will be more or less susceptible to each type of attack.
+                    <p style={{ color: 'rgba(0, 0, 0, 1)', fontWeight: '300' }}>
+                        Different kinds of people will be more or less susceptible to each type of attack.
                         Select the one that you think they would most likely fall for.
+                    </p>
+                    <p style={{ color: 'rgba(0, 0, 0, 1)', fontWeight: '300' }}>
+                        Your target may or may not fall for your scam.
+                        If they do, you'll get a payout in data and money!
                     </p>
                 </div>
                 <div className="modifierWrapper">

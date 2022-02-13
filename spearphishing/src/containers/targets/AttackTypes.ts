@@ -145,7 +145,7 @@ export const ModifierMap: ModifierMapType = {
     "BannerAd": {
         name: "Banner Ad",
         description: "Your phishing attempt pays out more money, but is less credible",
-        cost: 500,
+        cost: 50,
         modifyCredibility: (credibility: number) =>{
             return Math.max(credibility - 5, 0) // cred - 5, but don't go negative,
         },
@@ -173,22 +173,123 @@ export const ModifierMap: ModifierMapType = {
     },
     "Keylogger": {
         name: "Keylogger",
-        description: "Adds a flat 50mb of data to every successful hack",
-        cost: 500,
-        modifyCredibility: (cred: number) => {
-            return cred;
-        },
+        description: "Adds a flat 50 MB of data to every successful hack by infecting your target with a keylogger to pull more data.",
+        cost: 750,
+        modifyCredibility: (cred: number) => { return cred; },
         modifyPayout: (money: number, data: number) => {
             return {
                 modifiedMoneyPaid: money,
                 modifiedDataPaid: data + 50
             }
         }
-    }
+    },
+    "Ransomware": {
+        name: "Ransomware",
+        description: "Adds a flat $200 and to every successful hack by infecting your target with a ransomware virus.",
+        cost: 3000,
+        modifyCredibility: (cred: number) => { return cred; },
+        modifyPayout: (money: number, data: number) => {
+            return {
+                modifiedMoneyPaid: money + 200,
+                modifiedDataPaid: data,
+            }
+        }
+    },
+    "RAT": {
+        name: "RAT",
+        description: "Adds a flat 50 MB of data on every successful hack by allowing a Remote Access Terminal backdoor to be installed as a backdoor on your victim's machine.",
+        cost: 2500,
+        modifyCredibility: (cred: number) => { return cred; },
+        modifyPayout: (money: number, data: number) => {
+            return {
+                modifiedMoneyPaid: money,
+                modifiedDataPaid: data + 50,
+            }
+        }
+    },
+    "Worm": {
+        name: "Worm",
+        description: "Adds a flat 150 MB of data on every successful hack by allowing a worm to install on your targets machine and infiltrate the surrounding network.",
+        cost: 3000,
+        modifyCredibility: (cred: number) => { return cred; },
+        modifyPayout: (money: number, data: number) => {
+            return {
+                modifiedMoneyPaid: money,
+                modifiedDataPaid: data + 150,
+            }
+        }
+    },
+    "AdvancedProofRead": {
+        name: "Advanced Proof Read",
+        description: "Increases your credibility by 10% by allowing you to hire a proofreader.",
+        cost: 1000,
+        modifyCredibility: (cred: number) => { 
+            let currCred = cred * 0.10;    
+            return cred + currCred; 
+        },
+        modifyPayout: (money: number, data: number) => {
+            return {
+                modifiedMoneyPaid: money,
+                modifiedDataPaid: data,
+            }
+        }
+    },
+    "AddPersonalInformation": {
+        name: "Add Personal Information",
+        description: "Increases your credibility by 15% by allowing you to find/insert personal information into your emails to make them more convincing.",
+        cost: 1250,
+        modifyCredibility: (cred: number) => { 
+            let currCred = cred * 0.15;    
+            return cred + currCred; 
+        },
+        modifyPayout: (money: number, data: number) => {
+            return {
+                modifiedMoneyPaid: money,
+                modifiedDataPaid: data,
+            }
+        }
+    },
+    "IncreaseDomainCredibility": {
+        name: "Increase Domain Credibility",
+        description: "Increases your credibility by 5% by allowing you to use a more realistic domain for your phishing link.",
+        cost: 1000,
+        modifyCredibility: (cred: number) => { 
+            let currCred = cred * 0.05;    
+            return cred + currCred; 
+        },
+        modifyPayout: (money: number, data: number) => {
+            return {
+                modifiedMoneyPaid: money,
+                modifiedDataPaid: data,
+            }
+        }
+    },
+    "IncreaseSourceEmailCredibility": {
+        name: "Increase Source Email Credibility",
+        description: "Increases your credibility by 5% by allowing you to use a more realistic spoofed source email address.",
+        cost: 1000,
+        modifyCredibility: (cred: number) => { 
+            let currCred = cred * 0.05;    
+            return cred + currCred; 
+        },
+        modifyPayout: (money: number, data: number) => {
+            return {
+                modifiedMoneyPaid: money,
+                modifiedDataPaid: data,
+            }
+        }
+    },
 }
 
 export const ModifierList = {
     BannerAd: "BannerAd",
     EmbedCryptoMiner: "EmbedCryptoMiner",
-    Keylogger: "Keylogger"
+    Keylogger: "Keylogger",
+    Ransomware: "Ransomware", 
+    RAT: "RAT",
+    Worm: "Worm",
+    AdvancedProofRead: "AdvancedProofRead",
+    AddPersonalInformation: "AddPersonalInformation",
+    IncreaseDomainCredibility: "IncreaseDomainCredibility",
+    IncreaseSourceEmailCredibility: "IncreaseSourceEmailCredibility",
 }
