@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { Target } from "../../../containers/targets/TargetContainer";
 import { GetRandomUser } from "../../../containers/targets/targets";
 import { InboxEmailKind } from "../../inbox/ActiveEmail";
-import { IncomingEmail, pushEmail } from "../../inbox/inboxSlice";
+import { IncomingEmail, pushEmail, removeActiveEmail } from "../../inbox/inboxSlice";
 import { InboxEmailProps } from "../InboxEmailProps";
 import { EmailSkeleton } from "../SharedComponents/EmailSkeleton";
 import { AttackTypes, Modifier, ModifierMap, ModifierMapKey } from "../../../containers/targets/AttackTypes";
@@ -111,6 +111,10 @@ export function DraftEmail(props: DraftEmailProps) {
                 attackType: templateType as AttackTypes,
                 modifiersApplied: modifierNamesActive.map(e => ModifierMap[e as ModifierMapKey])
             }
+        );
+
+        dispatch(
+            removeActiveEmail()
         )
     }
 

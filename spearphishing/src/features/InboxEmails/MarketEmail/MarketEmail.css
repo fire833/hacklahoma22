@@ -1,0 +1,21 @@
+.doneShoppingBtn {
+    font-size: 1.2em;
+    padding: 0.3em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: black;
+
+    transition-property: all;
+    transition-duration: 0.1s;
+    margin-bottom: 0.2em;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.doneShoppingBtn:hover{
+    background-color: #0078EDC3;
+    color: white;
+    /* transition-property: background-color; */
+    /* transition-duration: 0.15s; */
+}

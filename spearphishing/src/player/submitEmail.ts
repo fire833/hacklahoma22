@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { AttackTypes, Modifier } from "../containers/targets/AttackTypes";
 import { Target } from "../containers/targets/TargetContainer";
-import { addData, addMoney } from "./playerSlice";
+import { addData, addMoney, incrementDailyEmails } from "./playerSlice";
 
 import { store } from "../app/store"
 
@@ -58,8 +58,9 @@ export function sendPhishingEmail(target: Target, phishingEmail: PhishingEmail) 
         // run it in a component
         dispatch(addMoney(dollars_won))
         dispatch(addData(data_won))
-
     }
+
+    dispatch(incrementDailyEmails())
 
 
 
