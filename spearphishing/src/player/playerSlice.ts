@@ -35,7 +35,9 @@ interface PlayerState {
 
     modifierNamesOwned: string[],
 
-    emails_sent_today: number
+    emails_sent_today: number,
+
+    hasWon: boolean
 }
 
 
@@ -54,7 +56,8 @@ let initialState: PlayerState = {
     modifierNamesOwned: [
         ModifierList.BannerAd,
     ],
-    emails_sent_today: 0
+    emails_sent_today: 0,
+    hasWon: false
 
 }
 
@@ -90,10 +93,13 @@ export const playerSlice = createSlice({
             }else{
                 alert("You don't have the funds!");
             }
+        },
+        win: (currState) => {
+            currState.hasWon = true;
         }
         
     }
 })
 
-export const { acceptInitEmail, addMoney, addData, advanceDay, clearDailyEmails, incrementDailyEmails, tryPurchaseModifierById } = playerSlice.actions;
+export const { acceptInitEmail, addMoney, addData, advanceDay, clearDailyEmails, incrementDailyEmails, tryPurchaseModifierById, win } = playerSlice.actions;
 export default playerSlice.reducer;

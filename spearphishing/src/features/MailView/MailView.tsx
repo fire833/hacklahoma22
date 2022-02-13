@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAppSelector } from '../../app/hooks';
 import { InboxEmailKind } from '../inbox/ActiveEmail';
 import { BossStatusEmail } from '../InboxEmails/BossEmail/BossEmail';
+import { ConclusionEmail } from '../InboxEmails/ConclusionEmail/ConclusionEmail';
 import { DraftEmail } from '../InboxEmails/DraftEmail/DraftEmail';
 import { IntroEmail } from '../InboxEmails/IntroEmail/IntroEmail';
 import { MarketEmail } from '../InboxEmails/MarketEmail/MarketEmail';
@@ -28,6 +29,8 @@ export function MailView() {
             <TargetBriefEmail activeEmail={activeEmail}></TargetBriefEmail>
 
             <MarketEmail activeEmail={activeEmail}></MarketEmail>
+
+            <ConclusionEmail activeEmail={activeEmail}></ConclusionEmail>
 
         </div>
     )
