@@ -67,9 +67,19 @@ export const playerSlice = createSlice({
     name: 'player',
     initialState: initialState,
     reducers: {
-        acceptInitEmail(currState){
+        acceptInitEmail: (currState) => {
             currState.hasAcceptedInitEmail = true;
+        },  
+        addMoney: (currState, action: PayloadAction<number>) => { 
+            currState.money += action.payload;
+        },
+        addData: (currState, action: PayloadAction<number>) => { 
+            currState.data += action.payload;
+        },
+        advanceDay: (currState) => {
+            currState.day_num++;
         }
+        
     }
 })
 
