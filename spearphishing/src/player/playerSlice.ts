@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AttackTypes, Modifier, ModifierList, ModifierMap, ModifierMapKey } from "../containers/targets/AttackTypes";
+import { Modifier, ModifierList, ModifierMap, ModifierMapKey, RefactoredAttackTypeKey, RefactoredAttackTypeList, RefactoredAttackTypeMap } from "../containers/targets/AttackTypes";
 
 interface PlayerState {
     // DomainCapabilities: DomainCapabilities;
@@ -22,8 +22,6 @@ interface PlayerState {
     AdvancedDeceptionTechniques: boolean;
     // Can your payload be run as an obfuscated attachment (ie out of a PDF/gzip/Excel bug?)
     ObfuscateViaAlternatePayload: boolean;
-    // General: General;
-    UnlockedAttackVectors: AttackTypes[];
 
     hasAcceptedInitEmail: boolean
 
@@ -34,6 +32,7 @@ interface PlayerState {
     data: number,
 
     modifierNamesOwned: string[],
+    attackTypeNamesOwned: string[],
 
     emails_sent_today: number,
 
@@ -47,7 +46,6 @@ let initialState: PlayerState = {
     EnableRAT: false,
     EnableObfuscation: false,
     ObfuscateViaAlternatePayload: false,
-    UnlockedAttackVectors: [],
     AdvancedDeceptionTechniques: false,
     hasAcceptedInitEmail: false,
     day_num: 0,
@@ -55,6 +53,9 @@ let initialState: PlayerState = {
     data: 0,
     modifierNamesOwned: [
         ModifierList.BannerAd,
+    ],
+    attackTypeNamesOwned: [
+        RefactoredAttackTypeList.BankResetPassword
     ],
     emails_sent_today: 0,
     hasWon: false
@@ -94,6 +95,16 @@ export const playerSlice = createSlice({
                 alert("You don't have the funds!");
             }
         },
+        tryPurchaseAttackById: (currstate, action: PayloadAction<RefactoredAttackTypeKey>) => {
+            let cost = RefactoredAttackTypeMap[action.payload].cost;
+
+            if(currstate.money >= cost){
+                currstate.money -= cost;
+                currstate.attackTypeNamesOwned.push(action.payload);
+            }else{
+                alert("You don't have the funds!");
+            }
+        },
         win: (currState) => {
             currState.hasWon = true;
         }
@@ -101,5 +112,5 @@ export const playerSlice = createSlice({
     }
 })
 
-export const { acceptInitEmail, addMoney, addData, advanceDay, clearDailyEmails, incrementDailyEmails, tryPurchaseModifierById, win } = playerSlice.actions;
+export const { acceptInitEmail, addMoney, addData, advanceDay, clearDailyEmails, incrementDailyEmails, tryPurchaseModifierById, tryPurchaseAttackById, win } = playerSlice.actions;
 export default playerSlice.reducer;

@@ -1,5 +1,4 @@
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { AttackTypes } from "../../../containers/targets/AttackTypes";
 import { GetRandomUser } from "../../../containers/targets/targets";
 import { acceptInitEmail } from "../../../player/playerSlice";
 import { sendPhishingEmail } from "../../../player/submitEmail";

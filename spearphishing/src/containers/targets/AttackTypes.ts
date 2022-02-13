@@ -1,7 +1,8 @@
+import { Target } from "./TargetContainer";
 
 
 // Enum for all available attack types.
-export enum AttackTypes {
+enum AttackTypes {
     NigerianPrince = "Nigerian Prince",
     RelativeInPrison = "Relative in Prison",
     BankResetPassword = "Bank Reset Password",
@@ -9,6 +10,13 @@ export enum AttackTypes {
     RequestChildSupportPregnancy = "Request Child Support (Pregnancy)",
     ThreatenPictureLeak = "Threaten Picture Leak",
     TikTokVerifyAddress = "TikTok Verify Address",
+}
+
+export type RefactoredAttackType = {
+    displayName: string,
+    description: string,
+    cost: number,
+    modifyCredibility:(credibility: number, target: Target) => number
 }
 
 export type Modifier = {
@@ -58,6 +66,78 @@ export type Modifier = {
 
 */
 
+
+export type RefactoredAttackTypeMapType = {[Property in keyof typeof RefactoredAttackTypeList]: RefactoredAttackType};
+export type RefactoredAttackTypeKey = keyof typeof RefactoredAttackTypeList;
+export const RefactoredAttackTypeMap: RefactoredAttackTypeMapType = {
+    RelativeInPrison: {
+        cost: 1000,
+        description: "Your target will think a long lost relative needs bail money",
+        displayName: "Relative In Prison",
+        modifyCredibility: (cred, target) => {
+            return cred;
+        }
+    },
+    BankResetPassword: {
+        cost: 1000,
+        description: "Your target will think their bank needs a new password, giving it to you",
+        displayName: "Bank Reset Password",
+        modifyCredibility: (cred, target) => {
+            return cred;
+        }
+    },
+    BossWantsFileCheck: {
+        cost: 1000,
+        description: "Your target will think their boss needs them to check out a file, which they'll download and run",
+        displayName: "Boss Wants File Check",
+        modifyCredibility: (cred, target) => {
+            return cred;
+        }
+    },
+    NigerianPrince: {
+        cost: 1000,
+        description: "Your target will fall victim to a classic scheme",
+        displayName: "Nigerian Prince",
+        modifyCredibility: (cred, target) => {
+            return cred;
+        }
+    },
+    RequestChildSupportPregnancy: {
+        cost: 1000,
+        description: "Your target will request child support payments",
+        displayName: "Request Child Support",
+        modifyCredibility: (cred, target) => {
+            return cred;
+        }
+    },
+    ThreatenPictureLeak: {
+        cost: 1000,
+        description: "Your target will pay a ransom for compromising pictures that you claim to have of them",
+        displayName: "Threaten Picture Leak",
+        modifyCredibility: (cred, target) => {
+            return cred;
+        }
+    },
+    TikTokVerifyAddress: {
+        cost: 1000,
+        description: "Your target will think 'TikTok' needs their address",
+        displayName: "TikTok Verify Address",
+        modifyCredibility: (cred, target) => {
+            return cred;
+        }
+    },
+
+}
+
+export const RefactoredAttackTypeList = {
+    "NigerianPrince": "NigerianPrince",
+    "RelativeInPrison": "RelativeInPrison",
+    "BankResetPassword": "BankResetPassword",
+    "BossWantsFileCheck": "BossWantsFileCheck",
+    "RequestChildSupportPregnancy": "RequestChildSupportPregnancy",
+    "ThreatenPictureLeak": "ThreatenPictureLeak",
+    "TikTokVerifyAddress": "TikTokVerifyAddress",
+}
 
 export type ModifierMapType = { [Property in keyof typeof ModifierList]: Modifier };
 export type ModifierMapKey = keyof typeof ModifierList;

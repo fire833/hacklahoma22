@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
-import { AttackTypes, Modifier } from "../containers/targets/AttackTypes";
+import { Modifier, RefactoredAttackTypeKey } from "../containers/targets/AttackTypes";
 import { Target } from "../containers/targets/TargetContainer";
 import { addData, addMoney, incrementDailyEmails } from "./playerSlice";
 
 import { store } from "../app/store"
 
 export type PhishingEmail = {
-    attackType: AttackTypes,
+    attackType: RefactoredAttackTypeKey,
     modifiersApplied: Modifier[]
 }
 

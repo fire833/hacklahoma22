@@ -1,4 +1,4 @@
-import { AttackTypes } from './AttackTypes';
+import { RefactoredAttackType, RefactoredAttackTypeKey } from './AttackTypes';
 import './targets'
 import { GlobalTargets } from './targets';
 
@@ -49,8 +49,8 @@ export type Target = {
     DataPayoutMin: number,
     DataPayoutRange: number,
 
-    ResistantAttackTypes: AttackTypes[],
-    VulnerableAttackTypes: AttackTypes[],
+    ResistantAttackTypes: RefactoredAttackTypeKey[] | string[],
+    VulnerableAttackTypes: RefactoredAttackTypeKey[] | string[],
 }
 
 

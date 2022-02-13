@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { AttackTypes, ModifierMap, ModifierMapKey } from "../../../containers/targets/AttackTypes";
+import { ModifierMap, ModifierMapKey, RefactoredAttackTypeKey, RefactoredAttackTypeMap } from "../../../containers/targets/AttackTypes";
 import { GetRandomUser } from "../../../containers/targets/targets";
 import { acceptInitEmail } from "../../../player/playerSlice";
 import { sendPhishingEmail } from "../../../player/submitEmail";
@@ -11,6 +11,7 @@ import { MarketModifierOffering } from "./MarketModifierOffering";
 
 import './MarketEmail.css';
 import { TargetBriefData } from "../TargetBriefEmail/TargetBriefEmail";
+import { MarketattackOffering } from "./MarketAttackOffering";
 
 type MarketEmailProps = {
     children?: any,
@@ -74,6 +75,14 @@ export function MarketEmail(props: MarketEmailProps) {
             <h2>
                 Phishing Scam Types:
             </h2>
+            {
+                Object.keys(RefactoredAttackTypeMap).map((atkId, ind) => {
+                    let atk = RefactoredAttackTypeMap[atkId as RefactoredAttackTypeKey];
+                    
+                    if(player.attackTypeNamesOwned.includes(atkId)) return <span key={ind}></span>;
+                    return (<MarketattackOffering attackid={atkId as RefactoredAttackTypeKey} key={ind}></MarketattackOffering>)
+                })
+            }
 
 
             <hr/>

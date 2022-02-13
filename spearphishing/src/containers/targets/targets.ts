@@ -1,4 +1,4 @@
-import { AttackTypes } from './AttackTypes';
+import { RefactoredAttackTypeList } from './AttackTypes';
 import { Target, TargetOccupation } from './TargetContainer'
 
 export const GlobalTargets: Target[] = [{
@@ -12,7 +12,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 50,
     MoneyPayoutMin: 100,
     MoneyPayoutRange: 100,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince],
     VulnerableAttackTypes: []
 },
 {
@@ -26,7 +26,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 10,
     MoneyPayoutMin: 0,
     MoneyPayoutRange: 100,
-    ResistantAttackTypes: [AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 },
 {
@@ -40,7 +40,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 50,
     MoneyPayoutMin: 300,
     MoneyPayoutRange: 200,
-    ResistantAttackTypes: [AttackTypes.BossWantsFileCheck, AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince],
+    ResistantAttackTypes: [RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RequestChildSupportPregnancy, RefactoredAttackTypeList.NigerianPrince],
     VulnerableAttackTypes: []
 },
 {
@@ -54,7 +54,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 70,
     MoneyPayoutMin: 300,
     MoneyPayoutRange: 200,
-    ResistantAttackTypes: [AttackTypes.TikTokVerifyAddress, AttackTypes.RequestChildSupportPregnancy, AttackTypes.BossWantsFileCheck],
+    ResistantAttackTypes: [RefactoredAttackTypeList.TikTokVerifyAddress, RefactoredAttackTypeList.RequestChildSupportPregnancy, RefactoredAttackTypeList.BossWantsFileCheck],
     VulnerableAttackTypes: []
 
 },
@@ -69,7 +69,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 10,
     MoneyPayoutMin: 50,
     MoneyPayoutRange: 100,
-    ResistantAttackTypes: [AttackTypes.TikTokVerifyAddress, AttackTypes.RequestChildSupportPregnancy, AttackTypes.BossWantsFileCheck, AttackTypes.NigerianPrince],
+    ResistantAttackTypes: [RefactoredAttackTypeList.TikTokVerifyAddress, RefactoredAttackTypeList.RequestChildSupportPregnancy, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.NigerianPrince],
     VulnerableAttackTypes: []
 },
 {
@@ -83,7 +83,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 25,
     MoneyPayoutMin: 50,
     MoneyPayoutRange: 100,
-    ResistantAttackTypes: [AttackTypes.TikTokVerifyAddress, AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince],
+    ResistantAttackTypes: [RefactoredAttackTypeList.TikTokVerifyAddress, RefactoredAttackTypeList.RequestChildSupportPregnancy, RefactoredAttackTypeList.NigerianPrince],
     VulnerableAttackTypes: []
 
 },
@@ -98,7 +98,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 5,
     MoneyPayoutMin: 30,
     MoneyPayoutRange: 150,
-    ResistantAttackTypes: [AttackTypes.TikTokVerifyAddress, AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak],
+    ResistantAttackTypes: [RefactoredAttackTypeList.TikTokVerifyAddress, RefactoredAttackTypeList.RequestChildSupportPregnancy, RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak],
     VulnerableAttackTypes: []
 },
 {
@@ -112,7 +112,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 30,
     MoneyPayoutMin: 30,
     MoneyPayoutRange: 150,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak],
     VulnerableAttackTypes: []
 
 },
@@ -127,7 +127,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 20,
     MoneyPayoutMin: 500,
     MoneyPayoutRange: 1500,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak],
     VulnerableAttackTypes: []
 
 },
@@ -142,7 +142,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 20,
     MoneyPayoutMin: 50,
     MoneyPayoutRange: 100,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 },
 {
@@ -156,7 +156,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 33,
     MoneyPayoutMin: 75,
     MoneyPayoutRange: 500,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 
 },
@@ -171,7 +171,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 1,
     MoneyPayoutMin: 25,
     MoneyPayoutRange: 100,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 },
 {
@@ -185,7 +185,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 1,
     MoneyPayoutMin: 25,
     MoneyPayoutRange: 100,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 },
 {
@@ -199,7 +199,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 1,
     MoneyPayoutMin: 25,
     MoneyPayoutRange: 100,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 },
 {
@@ -213,8 +213,8 @@ export const GlobalTargets: Target[] = [{
     Trust: 50,
     MoneyPayoutMin: 250,
     MoneyPayoutRange: 1000,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.TikTokVerifyAddress],
-    VulnerableAttackTypes: [AttackTypes.RelativeInPrison]
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.TikTokVerifyAddress],
+    VulnerableAttackTypes: [RefactoredAttackTypeList.RelativeInPrison]
 },
 {
     Gender: "Male",
@@ -227,7 +227,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 5,
     MoneyPayoutMin: 1000,
     MoneyPayoutRange: 5000,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RequestChildSupportPregnancy],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RequestChildSupportPregnancy],
     VulnerableAttackTypes: []
 },
 {
@@ -241,8 +241,8 @@ export const GlobalTargets: Target[] = [{
     Trust: 35,
     MoneyPayoutMin: 25,
     MoneyPayoutRange: 100,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
-    VulnerableAttackTypes: [AttackTypes.RelativeInPrison]
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
+    VulnerableAttackTypes: [RefactoredAttackTypeList.RelativeInPrison]
 },
 {
     Gender: "Male",
@@ -256,7 +256,7 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 100,
     MoneyPayoutRange: 250,
     ResistantAttackTypes: [],
-    VulnerableAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress]
+    VulnerableAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress]
 },
 {
     Gender: "Female",
@@ -269,8 +269,8 @@ export const GlobalTargets: Target[] = [{
     Trust: 47,
     MoneyPayoutMin: 100,
     MoneyPayoutRange: 250,
-    ResistantAttackTypes: [AttackTypes.BossWantsFileCheck, AttackTypes.BankResetPassword],
-    VulnerableAttackTypes: [AttackTypes.RelativeInPrison]
+    ResistantAttackTypes: [RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.BankResetPassword],
+    VulnerableAttackTypes: [RefactoredAttackTypeList.RelativeInPrison]
 },
 {
     Gender: "Male",
@@ -283,7 +283,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 5,
     MoneyPayoutMin: 100,
     MoneyPayoutRange: 250,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 },
 {
@@ -297,7 +297,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 45,
     MoneyPayoutMin: 500,
     MoneyPayoutRange: 10000,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 },
 {
@@ -311,7 +311,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 80,
     MoneyPayoutMin: 100,
     MoneyPayoutRange: 250,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 },
 {
@@ -325,7 +325,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 5,
     MoneyPayoutMin: 100,
     MoneyPayoutRange: 250,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 },
 {
@@ -339,7 +339,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 5,
     MoneyPayoutMin: 50,
     MoneyPayoutRange: 150,
-    ResistantAttackTypes: [AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [RefactoredAttackTypeList.RequestChildSupportPregnancy, RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 },
 {
@@ -353,7 +353,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 40,
     MoneyPayoutMin: 100,
     MoneyPayoutRange: 250,
-    ResistantAttackTypes: [AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck],
+    ResistantAttackTypes: [RefactoredAttackTypeList.RequestChildSupportPregnancy, RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck],
     VulnerableAttackTypes: []
 },
 {
@@ -367,7 +367,7 @@ export const GlobalTargets: Target[] = [{
     Trust: 20,
     MoneyPayoutMin: 20,
     MoneyPayoutRange: 150,
-    ResistantAttackTypes: [ AttackTypes.RequestChildSupportPregnancy, AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.BossWantsFileCheck, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
+    ResistantAttackTypes: [ RefactoredAttackTypeList.RequestChildSupportPregnancy, RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.BossWantsFileCheck, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
     VulnerableAttackTypes: []
 },
 {
@@ -381,8 +381,8 @@ export const GlobalTargets: Target[] = [{
     Trust: 20,
     MoneyPayoutMin: 20,
     MoneyPayoutRange: 150,
-    ResistantAttackTypes: [AttackTypes.NigerianPrince, AttackTypes.RelativeInPrison, AttackTypes.ThreatenPictureLeak, AttackTypes.RelativeInPrison, AttackTypes.TikTokVerifyAddress],
-    VulnerableAttackTypes: [AttackTypes.BossWantsFileCheck]
+    ResistantAttackTypes: [RefactoredAttackTypeList.NigerianPrince, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.ThreatenPictureLeak, RefactoredAttackTypeList.RelativeInPrison, RefactoredAttackTypeList.TikTokVerifyAddress],
+    VulnerableAttackTypes: [RefactoredAttackTypeList.BossWantsFileCheck]
 },
 {
     Gender: "Male",
@@ -396,7 +396,7 @@ export const GlobalTargets: Target[] = [{
     MoneyPayoutMin: 100,
     MoneyPayoutRange: 150,
     ResistantAttackTypes: [],
-    VulnerableAttackTypes: [AttackTypes.BossWantsFileCheck]
+    VulnerableAttackTypes: [RefactoredAttackTypeList.BossWantsFileCheck]
 },];
 
 

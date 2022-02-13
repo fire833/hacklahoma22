@@ -5,7 +5,7 @@ import { InboxEmailKind } from "../../inbox/ActiveEmail";
 import { IncomingEmail, pushEmail, removeActiveEmail } from "../../inbox/inboxSlice";
 import { InboxEmailProps } from "../InboxEmailProps";
 import { EmailSkeleton } from "../SharedComponents/EmailSkeleton";
-import { AttackTypes, Modifier, ModifierMap, ModifierMapKey } from "../../../containers/targets/AttackTypes";
+import { Modifier, ModifierMap, ModifierMapKey, RefactoredAttackTypeKey, RefactoredAttackTypeList, RefactoredAttackTypeMap } from "../../../containers/targets/AttackTypes";
 import React, { useState, ChangeEvent } from 'react';
 import { BankResetPasswordEmail } from "./EmailAttackStrategies/BankResetPasswordEmail";
 import { BossWantsFileCheckEmail } from "./EmailAttackStrategies/BossWantsFileCheckEmail";
@@ -31,31 +31,31 @@ type DraftEmailData = {
 function serveTemplate(attack: string) {
 
     switch (attack) {
-        case AttackTypes.BankResetPassword:
+        case RefactoredAttackTypeList.BankResetPassword:
             return (
                 <BankResetPasswordEmail></BankResetPasswordEmail>
             )
-        case AttackTypes.BossWantsFileCheck:
+        case RefactoredAttackTypeList.BossWantsFileCheck:
             return (
                 <BossWantsFileCheckEmail></BossWantsFileCheckEmail>
             )
-        case AttackTypes.NigerianPrince:
+        case RefactoredAttackTypeList.NigerianPrince:
             return (
                 <NigerianPrinceEmail></NigerianPrinceEmail>
             )
-        case AttackTypes.RelativeInPrison:
+        case RefactoredAttackTypeList.RelativeInPrison:
             return (
                 <RelativeInPrisonEmail></RelativeInPrisonEmail>
             )
-        case AttackTypes.RequestChildSupportPregnancy:
+        case RefactoredAttackTypeList.RequestChildSupportPregnancy:
             return (
                 <RequestChildSupportPregnancyEmail></RequestChildSupportPregnancyEmail>
             )
-        case AttackTypes.ThreatenPictureLeak:
+        case RefactoredAttackTypeList.ThreatenPictureLeak:
             return (
                 <ThreatenPictureLeakEmail></ThreatenPictureLeakEmail>
             )
-        case AttackTypes.TikTokVerifyAddress:
+        case RefactoredAttackTypeList.TikTokVerifyAddress:
             return (
                 <TikTokVerifyAddressEmail></TikTokVerifyAddressEmail>
             )
@@ -72,13 +72,17 @@ export function DraftEmail(props: DraftEmailProps) {
 
     const ThisType: InboxEmailKind = InboxEmailKind.OutgoingDraft;
     let dispatch = useAppDispatch();
-    let [templateType, setTemplate] = useState(AttackTypes.BankResetPassword);
-
+    
     let initialModsActive: string[] = [];
     let [modifierNamesActive, setModifiersActive] = useState(initialModsActive);
-
+    
     let userOwnedMods = useAppSelector(state => state.player.modifierNamesOwned);
     console.log(userOwnedMods);
+    
+    let userOwnedAtks = useAppSelector(state => state.player.attackTypeNamesOwned);
+    console.log(userOwnedAtks);
+    
+    let [templateType, setTemplate] = useState(userOwnedAtks[0]);
 
 
     function activateMod(modifierName: string) {
@@ -104,11 +108,11 @@ export function DraftEmail(props: DraftEmailProps) {
     }
 
 
-    function submitDraft(){
+    function submitDraft() {
         sendPhishingEmail(
             target,
             {
-                attackType: templateType as AttackTypes,
+                attackType: templateType as RefactoredAttackTypeKey,
                 modifiersApplied: modifierNamesActive.map(e => ModifierMap[e as ModifierMapKey])
             }
         );
@@ -135,17 +139,27 @@ export function DraftEmail(props: DraftEmailProps) {
             <div className="draftConfigure">
                 <div className="attackTypeWrapper">
                     <h4 className="draftConfigureHeader">Choose your template:</h4>
-                    <select value={templateType} onChange={(evt: ChangeEvent<HTMLSelectElement>) => setTemplate(evt.target.value as AttackTypes)}>
+                    <select value={templateType} onChange={(evt: ChangeEvent<HTMLSelectElement>) => setTemplate(evt.target.value as RefactoredAttackTypeKey)}>
                         <option selected disabled>-- Select Attack Type--</option>
-                        <option value={AttackTypes.BankResetPassword}>{AttackTypes.BankResetPassword.toString()}</option>
-                        <option value={AttackTypes.BossWantsFileCheck}>{AttackTypes.BossWantsFileCheck.toString()}</option>
-                        <option value={AttackTypes.NigerianPrince}>{AttackTypes.NigerianPrince.toString()}</option>
-                        <option value={AttackTypes.RelativeInPrison}>{AttackTypes.RelativeInPrison.toString()}</option>
-                        <option value={AttackTypes.RequestChildSupportPregnancy}>{AttackTypes.RequestChildSupportPregnancy.toString()}</option>
-                        <option value={AttackTypes.ThreatenPictureLeak}>{AttackTypes.ThreatenPictureLeak.toString()}</option>
-                        <option value={AttackTypes.TikTokVerifyAddress}>{AttackTypes.TikTokVerifyAddress.toString()}</option>
+
+                        {userOwnedAtks.map((atkName, ind) => {
+                            let atkObj = RefactoredAttackTypeMap[atkName as RefactoredAttackTypeKey];
+                            console.log("name", atkName, "found", atkObj);
+                            
+                            return (
+                                <option value={atkName} key={ind}>{atkObj.displayName}</option>
+                            )
+                        })}
+
+                        {/* <option value={RefactoredAttackTypeList.BankResetPassword}>{RefactoredAttackTypeList.BankResetPassword.toString()}</option>
+                        <option value={RefactoredAttackTypeList.BossWantsFileCheck}>{RefactoredAttackTypeList.BossWantsFileCheck.toString()}</option>
+                        <option value={RefactoredAttackTypeList.NigerianPrince}>{RefactoredAttackTypeList.NigerianPrince.toString()}</option>
+                        <option value={RefactoredAttackTypeList.RelativeInPrison}>{RefactoredAttackTypeList.RelativeInPrison.toString()}</option>
+                        <option value={RefactoredAttackTypeList.RequestChildSupportPregnancy}>{RefactoredAttackTypeList.RequestChildSupportPregnancy.toString()}</option>
+                        <option value={RefactoredAttackTypeList.ThreatenPictureLeak}>{RefactoredAttackTypeList.ThreatenPictureLeak.toString()}</option>
+                        <option value={RefactoredAttackTypeList.TikTokVerifyAddress}>{RefactoredAttackTypeList.TikTokVerifyAddress.toString()}</option> */}
                     </select>
-                    <p style={{color: 'rgba(0, 0, 0, 1)', fontWeight: '300'}}>Different kinds of people will be more or less susceptible to each type of attack. 
+                    <p style={{ color: 'rgba(0, 0, 0, 1)', fontWeight: '300' }}>Different kinds of people will be more or less susceptible to each type of attack.
                         Select the one that you think they would most likely fall for.
                     </p>
                 </div>
@@ -171,11 +185,11 @@ export function DraftEmail(props: DraftEmailProps) {
 
             {serveTemplate(templateType)}
 
-            <hr/>
+            <hr />
 
             <div className="submitRow">
                 <button onClick={() => submitDraft()} className="sendBtn">Send E-Mail</button>
-            </div> 
+            </div>
         </EmailSkeleton >
     )
 }
