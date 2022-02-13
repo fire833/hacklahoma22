@@ -1,3 +1,4 @@
+import { useAppSelector } from "../../../app/hooks";
 import { Target } from "../../../containers/targets/TargetContainer";
 import { InboxEmailKind } from "../../inbox/ActiveEmail";
 import { IncomingEmail } from "../../inbox/inboxSlice";
@@ -19,6 +20,8 @@ export function TargetBriefEmail(props: TargetBriefProps) {
 
     const ThisType: InboxEmailKind = InboxEmailKind.TargetBrief;
 
+    let currDay = useAppSelector(state => state.player.day_num);
+
     if (props.activeEmail === null || props.activeEmail.kind !== ThisType) return <></>
 
     let targetBriefData = props.activeEmail.data as TargetBriefData;
@@ -34,6 +37,11 @@ export function TargetBriefEmail(props: TargetBriefProps) {
            
            <h1>Target Brief</h1>
            <p>Here are your options for the day. As always, <b>you'll only have time to scam 3 of them.</b></p>
+           {currDay > 0 &&
+           <p>Choose wisely, different kinds of people will respond better to certain phishing schemes.
+               Select targets that you think would fall for the schemes you've purchased.
+           </p>
+        }
 
 
             <TargetList targets={targetBriefData.targets}></TargetList>

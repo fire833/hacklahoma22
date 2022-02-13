@@ -220,7 +220,7 @@ export const ModifierMap: ModifierMapType = {
         }
     },
     "AdvancedProofRead": {
-        name: "AdvancedProofRead",
+        name: "Advanced Proof Read",
         description: "Increases your credibility by 10% by allowing you to hire a proofreader.",
         cost: 1000,
         modifyCredibility: (cred: number) => { 
@@ -235,7 +235,7 @@ export const ModifierMap: ModifierMapType = {
         }
     },
     "AddPersonalInformation": {
-        name: "AddPersonalInformation",
+        name: "Add Personal Information",
         description: "Increases your credibility by 15% by allowing you to find/insert personal information into your emails to make them more convincing.",
         cost: 1250,
         modifyCredibility: (cred: number) => { 
@@ -250,7 +250,7 @@ export const ModifierMap: ModifierMapType = {
         }
     },
     "IncreaseDomainCredibility": {
-        name: "IncreaseDomainCredibility",
+        name: "Increase Domain Credibility",
         description: "Increases your credibility by 5% by allowing you to use a more realistic domain for your phishing link.",
         cost: 1000,
         modifyCredibility: (cred: number) => { 
@@ -265,7 +265,7 @@ export const ModifierMap: ModifierMapType = {
         }
     },
     "IncreaseSourceEmailCredibility": {
-        name: "IncreaseSourceEmailCredibility",
+        name: "Increase Source Email Credibility",
         description: "Increases your credibility by 5% by allowing you to use a more realistic spoofed source email address.",
         cost: 1000,
         modifyCredibility: (cred: number) => { 
